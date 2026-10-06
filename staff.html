@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reception Dashboard — WaitEase Hospital Staff</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="staff-shell">
+  <div class="shell">
+    <!-- Staff Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small style="color:var(--green-300)">Staff &amp; Reception Control</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Floor Operations</div>
+      <a class="nav-link active" href="staff.html"><span class="nav-icon">📊</span> Reception Desk</a>
+      <a class="nav-link" href="staff-analytics.html"><span class="nav-icon">📈</span> Flow Analytics</a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Roster</a>
+
+      <div class="nav-category">Floor Controls</div>
+      <a class="nav-link" href="#steppedOutSection"><span class="nav-icon">⏳</span> Stepped Out Queue</a>
+      <a class="nav-link" href="#prioritySection"><span class="nav-icon">⭐</span> Priority Cases</a>
+      <a class="nav-link" href="#delaySection"><span class="nav-icon">📢</span> Broadcast Delays</a>
+
+      <div class="nav-category">Switch Portal</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🧑</span> View Patient Portal</a>
+      <a class="nav-link" href="login.html" style="margin-top:auto"><span class="nav-icon">🚪</span> Sign Out Staff</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Screen 06 · Central Reception Command</span>
+          <h1 style="margin-top:8px">Live Reception Waiting Room Desk</h1>
+          <p class="slate">Manage live patient queue movements, monitor stepped-out patients, toggle doctor statuses, and broadcast delay explanations.</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <span class="badge badge-ok"><span class="dot dot-pulse"></span> OPD Active · Floor 2</span>
+          <a class="btn btn-primary" href="staff-analytics.html">View Wait Analytics →</a>
+        </div>
+      </header>
+
+      <!-- Floor Status Strip -->
+      <div class="grid grid-4" style="margin-bottom:24px">
+        <div class="card" style="padding:18px">
+          <span class="kicker kicker-green">Waiting in Lobby</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:var(--ink-800)">18</p>
+          <small class="muted">Active tokens ahead</small>
+        </div>
+
+        <!-- Patients who have stepped out (Explicit PDF Screen 6 requirement) -->
+        <div class="card" style="padding:18px;border:2px solid var(--lavender-400);background:var(--lavender-50)">
+          <span class="kicker" style="background:#ffffff">Stepped Out</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:var(--lavender-800)">3 Patients</p>
+          <small style="color:var(--lavender-900);font-weight:700">Protected 20-min timers active</small>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <span class="kicker" style="background:#fff1f2;color:#9f1239">Priority / Emergency</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:#e11d48">2 Active</p>
+          <small class="muted">Triage priority assigned</small>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <span class="kicker">Doctors on Duty</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:var(--green-700)">6 Present</p>
+          <small class="muted">1 in OT, 1 on break</small>
+        </div>
+      </div>
+
+      <!-- Live Queue Table with Stepped Out & Priority Management -->
+      <section class="card" style="border:1px solid rgba(124,58,237,0.15)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+          <div>
+            <h2>Active Patient Waiting Queue (Floor 2 · Dr. Mehta)</h2>
+            <p class="muted" style="font-size:13.5px">Real-time status controls for reception officers</p>
+          </div>
+          <div style="display:flex;gap:8px">
+            <a class="btn btn-ghost" href="#queue-table" style="text-decoration:none">▶ Call Next Patient</a>
+            <a class="btn btn-primary" href="#emergency-priority" style="text-decoration:none">+ Flag Emergency Priority</a>
+          </div>
+        </div>
+
+        <table class="table" style="margin-top:20px" id="queue-table">
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Token</th>
+              <th>Assigned Doctor</th>
+              <th>Position</th>
+              <th>Status &amp; Hold Time</th>
+              <th>Reception Quick Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Stepped out patient with live hold countdown -->
+            <tr style="background:var(--lavender-50)">
+              <td>
+                <strong>Rahul Sharma</strong> (34 M)
+                <small style="display:block;color:var(--muted)">Allergy / Diabetes review</small>
+              </td>
+              <td><span class="token" style="font-size:1.6rem">A-24</span></td>
+              <td>Dr. Anand Mehta (Room 204)</td>
+              <td><strong>#8</strong></td>
+              <td>
+                <span class="badge badge-wait">⏳ Stepped Out (Pharmacy)</span>
+                <small style="display:block;color:var(--lavender-900);font-weight:700;margin-top:2px">19:42 remaining</small>
+              </td>
+              <td>
+                <div style="display:flex;gap:6px">
+                  <a class="btn btn-ghost" style="padding:5px 10px;font-size:12px;text-decoration:none" href="return.html">Mark Arrived</a>
+                  <a class="btn btn-ghost" style="padding:5px 10px;font-size:12px;text-decoration:none" href="return.html">+10m Hold</a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- In Room Active Patient -->
+            <tr>
+              <td>
+                <strong>Meena Verma</strong> (42 F)
+                <small style="display:block;color:var(--muted)">Chest consultation</small>
+              </td>
+              <td><span class="token" style="font-size:1.6rem">A-23</span></td>
+              <td>Dr. Anand Mehta (Room 204)</td>
+              <td><span class="badge badge-ok">In Room Now</span></td>
+              <td><span class="badge badge-ok">Consulting (8 mins)</span></td>
+              <td>
+                <a class="btn btn-ghost" style="padding:5px 10px;font-size:12px;text-decoration:none" href="#complete">Complete Visit</a>
+              </td>
+            </tr>
+
+            <!-- Priority Emergency Patient -->
+            <tr style="background:#fff1f2" id="emergency-priority">
+              <td>
+                <strong>Suresh Joshi</strong> (68 M)
+                <small style="display:block;color:#9f1239;font-weight:700">Acute chest discomfort (SOS)</small>
+              </td>
+              <td><span class="token" style="font-size:1.6rem;color:#e11d48">EM-01</span></td>
+              <td>Dr. Anand Mehta (Room 204)</td>
+              <td><span class="badge badge-em">Priority Triage</span></td>
+              <td><span class="badge badge-em">Next in Room</span></td>
+              <td>
+                <span style="font-size:12px;font-weight:700;color:#9f1239">Prioritized (Explanation sent to queue)</span>
+              </td>
+            </tr>
+
+            <!-- Regular Waiting Patient -->
+            <tr>
+              <td>
+                <strong>Pooja Trivedi</strong> (29 F)
+                <small style="display:block;color:var(--muted)">Fever &amp; headache</small>
+              </td>
+              <td><span class="token" style="font-size:1.6rem">A-25</span></td>
+              <td>Dr. Anand Mehta (Room 204)</td>
+              <td>#9</td>
+              <td><span class="badge badge-wait">Waiting in Lobby</span></td>
+              <td>
+                <div style="display:flex;gap:6px">
+                  <a class="btn btn-ghost" style="padding:5px 10px;font-size:12px;text-decoration:none" href="#stepout">Step Out</a>
+                  <a class="btn btn-ghost" style="padding:5px 10px;font-size:12px;text-decoration:none" href="notifications.html">Send Alert</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Doctor Status Controls & Delay Broadcaster Grid -->
+      <div class="grid grid-2" style="margin-top:28px">
+        <!-- Doctor Status Controls (Screen 6 Requirement) -->
+        <section class="card" id="doctorControls">
+          <span class="kicker kicker-green">Doctor Status Controls</span>
+          <h3 style="margin-top:8px">Change Doctor State: Dr. Anand Mehta</h3>
+          <p class="muted" style="font-size:13px">Updating status immediately reflects on all patient screens.</p>
+
+          <div class="filter-bar" style="margin-top:16px">
+            <a href="doctor-status.html" class="chip" style="background:var(--green-100);color:var(--green-900);border-color:var(--green-500);font-weight:750;text-decoration:none">✓ In Consultation</a>
+            <a href="doctor-status.html" class="chip" style="text-decoration:none">Available Now</a>
+            <a href="doctor-status.html" class="chip" style="text-decoration:none">On Break</a>
+            <a href="doctor-status.html" class="chip" style="text-decoration:none">In Surgery (OT)</a>
+            <a href="doctor-status.html" class="chip" style="text-decoration:none">Emergency Duty</a>
+            <a href="doctor-status.html" class="chip" style="text-decoration:none">On Leave</a>
+          </div>
+
+          <div style="background:var(--cream-soft);border-radius:var(--radius-md);padding:14px;margin-top:16px;font-size:13.5px">
+            <strong>Current Room Broadcast:</strong>
+            <p style="color:var(--ink-700);margin-top:2px">
+              "Dr. Anand Mehta · General Medicine · Room 204 · Break scheduled at 1:30 PM."
+            </p>
+          </div>
+        </section>
+
+        <!-- Send Delay Updates to Waiting Patients (Screen 6 Requirement) -->
+        <section class="card" id="delaySection" style="border:2px solid var(--amber-500)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span class="kicker" style="background:#fef3c7;color:#92400e">Delay Broadcaster</span>
+            <span class="badge badge-warn">Transparent Messaging</span>
+          </div>
+          <h3 style="margin-top:8px">Broadcast Delay Explanation to Patients</h3>
+          <p class="muted" style="font-size:13px">Explain delays in plain language without giving fake precise times.</p>
+
+          <form style="margin-top:16px" action="queue.html" method="GET">
+            <label class="field">
+              <span>Select Cause of Delay</span>
+              <select id="delayReasonSelect">
+                <option value="emergency">Emergency acute trauma case prioritized</option>
+                <option value="complex">Previous patient consultation required detailed ECG / vitals</option>
+                <option value="ot">Doctor stepped into OT for urgent surgical review</option>
+                <option value="break">Scheduled afternoon break (resuming in 15 mins)</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Estimated Wait Adjustment Range</span>
+              <select id="delayRangeSelect">
+                <option>Approximately 10–15 minutes</option>
+                <option selected>Approximately 15–25 minutes</option>
+                <option>Approximately 25–40 minutes</option>
+              </select>
+            </label>
+
+            <button class="btn btn-primary btn-block" style="display:inline-flex;align-items:center;justify-content:center;gap:8px" type="submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              Broadcast Delay Notice to All Waiting Tokens →
+            </button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="my-visit.html" style="color:var(--ink-700)">Patient View</a>
+            <a href="simple.html" style="color:var(--ink-700)">Simple View</a>
+            <a href="choose.html" style="color:var(--lavender-700);font-weight:700">Switch Experience</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

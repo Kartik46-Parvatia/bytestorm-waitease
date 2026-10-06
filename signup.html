@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Registration — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <section class="hero-auth page">
+    <!-- Left Hero Column -->
+    <div class="hero-copy">
+      <a class="brand" href="index.html" style="color:var(--ink-900);margin:0">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small style="color:var(--lavender-600);font-weight:700">Care Multispeciality Hospital</small>
+        </div>
+      </a>
+
+      <div style="margin-top:48px">
+        <span class="kicker kicker-green">Quick &amp; Private Intake</span>
+        <h1 style="margin-top:16px">Tell us about yourself and your symptoms.</h1>
+        <p class="slate" style="margin-top:16px;max-width:480px;font-size:1.1rem;line-height:1.6">
+          Your profile helps our reception and triage doctors prepare in advance, matching you with the right specialist while reducing in-person paperwork.
+        </p>
+
+        <div class="card" style="margin-top:32px;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px)">
+          <span class="kicker">Why we ask this</span>
+          <p style="margin-top:8px;font-weight:600;font-size:14px;color:var(--ink-800)">
+            Specifying your health problems filters the doctor list automatically, highlighting the most relevant specialist.
+          </p>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <span class="badge badge-ok">✓ Smart Doctor Match</span>
+            <span class="badge badge-wait">✓ Automated Triage</span>
+            <span class="badge badge-ok">✓ Zero Wait Duplication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Signup Card -->
+    <div style="display:flex;align-items:center;justify-content:center;padding:24px 0">
+      <form class="auth-panel" action="choose.html" style="max-width:580px;margin:20px 36px 20px 0" id="regForm">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="kicker">New Patient</span>
+          <span class="badge badge-wait">Step 1 of 2</span>
+        </div>
+        <h2 style="margin-top:10px">Patient Registration</h2>
+        <p class="muted" style="font-size:13.5px;margin-top:2px">Please provide your medical &amp; contact information.</p>
+
+        <!-- Form Fields -->
+        <div class="grid" style="grid-template-columns:1.4fr 0.8fr;gap:14px;margin-top:18px">
+          <label class="field">
+            <span>Full Name *</span>
+            <input type="text" id="pName" value="Rahul Sharma" placeholder="e.g. Rahul Sharma" required>
+          </label>
+          <label class="field">
+            <span>Age *</span>
+            <input type="number" id="pAge" value="34" placeholder="Age" min="1" max="120" required>
+          </label>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+          <label class="field">
+            <span>Mobile Number *</span>
+            <input type="tel" id="pMobile" value="+91 98765 43210" placeholder="+91 98765 43210" required>
+          </label>
+          <label class="field">
+            <span>Blood Group</span>
+            <select id="pBlood">
+              <option value="B+">B+ (Positive)</option>
+              <option value="A+">A+ (Positive)</option>
+              <option value="O+">O+ (Positive)</option>
+              <option value="AB+">AB+ (Positive)</option>
+              <option value="O-">O- (Universal Donor)</option>
+              <option value="A-">A- (Negative)</option>
+              <option value="B-">B- (Negative)</option>
+              <option value="AB-">AB- (Negative)</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Residential Address *</span>
+          <input type="text" id="pAddress" value="12 Lake View Apartments, Near Central Park, Ahmedabad" placeholder="Complete address" required>
+        </label>
+
+        <!-- Diseases / Problems Selection -->
+        <div class="field" style="margin-bottom:12px">
+          <span>Existing Problems / Diseases (Click all that apply)</span>
+          <div class="filter-bar" style="margin:6px 0 10px">
+            <input type="checkbox" id="d1" checked><label for="d1">Type 2 Diabetes</label>
+            <input type="checkbox" id="d2"><label for="d2">High Blood Pressure</label>
+            <input type="checkbox" id="d3" checked><label for="d3">Seasonal Allergies</label>
+            <input type="checkbox" id="d4"><label for="d4">Fever &amp; Cold</label>
+            <input type="checkbox" id="d5"><label for="d5">Joint &amp; Knee Pain</label>
+            <input type="checkbox" id="d6"><label for="d6">Skin Rash</label>
+            <input type="checkbox" id="d7"><label for="d7">Chest Discomfort</label>
+            <input type="checkbox" id="d8"><label for="d8">Digestive Issues</label>
+          </div>
+          <textarea rows="2" placeholder="Describe any specific symptoms, illness history, or concerns..." style="resize:vertical">Mild sugar fluctuations, occasional seasonal wheezing.</textarea>
+        </div>
+
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+          <label class="field">
+            <span>Known Drug Allergies</span>
+            <input type="text" value="Penicillin" placeholder="e.g. Sulfa, Penicillin, None">
+          </label>
+          <label class="field">
+            <span>Emergency Contact</span>
+            <input type="text" value="Priya Sharma (+91 90000 11111)" placeholder="Name &amp; Phone">
+          </label>
+        </div>
+
+        <button class="btn btn-primary btn-block btn-lg" style="margin-top:18px" type="submit">
+          Save Details &amp; Choose Experience →
+        </button>
+
+        <p class="center muted" style="margin-top:14px;font-size:13.5px">
+          Already registered? <a href="login.html" style="color:var(--lavender-600);font-weight:700">Sign in here</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Complete Site Footer with Team Contact Emails -->
+  <footer class="site-foot" style="background:#ffffff;border-top:1px solid var(--cream-border);padding:24px 48px;margin-top:auto">
+    <div style="max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+        <div>
+          <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+          <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+        </div>
+        <div style="display:flex;gap:16px;font-size:13px">
+          <a href="index.html" style="color:var(--ink-700)">Home</a>
+          <a href="login.html" style="color:var(--ink-700)">Sign In</a>
+          <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Portal</a>
+        </div>
+      </div>
+
+      <div style="border-top:1px dashed var(--cream-border);padding-top:12px">
+        <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+          Team &amp; Hospital Contact Inquiries:
+        </span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            parvatiakartik@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            shrija090@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            aditya0kumar0sharma@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            rudra.dholakiya28@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

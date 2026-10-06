@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Bed Availability &amp; Booking — WaitEase Care</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Patient Services</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link active" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Live Ward Matrix</span>
+          <h1 style="margin-top:8px">Hospital Bed Availability</h1>
+          <p class="slate">Real-time status of hospital admission beds, featuring 4 strictly reserved beds for children, senior citizens, and emergency trauma.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Token A-24</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Key Capacity KPIs -->
+      <div class="grid grid-4" style="margin-bottom:24px">
+        <article class="card" style="padding:18px">
+          <span class="kicker">General Ward</span>
+          <p class="kpi" style="font-size:2.3rem;margin-top:6px;color:var(--ink-800)">12</p>
+          <small class="muted">Available for standard admission</small>
+        </article>
+
+        <article class="card" style="padding:18px">
+          <span class="kicker kicker-green">Emergency / ICU</span>
+          <p class="kpi" style="font-size:2.3rem;margin-top:6px;color:var(--green-700)">3</p>
+          <small class="muted">Trauma &amp; critical care</small>
+        </article>
+
+        <!-- User Requested Feature: Reserved Beds for Children -->
+        <article class="card" style="padding:18px;border:2px solid var(--lavender-400);background:var(--lavender-50)">
+          <span class="kicker" style="background:#ffffff">Pediatric Reserved</span>
+          <p class="kpi" style="font-size:2.3rem;margin-top:6px;color:var(--lavender-800)">2 Beds</p>
+          <small style="color:var(--lavender-900);font-weight:700">Strictly for Children only</small>
+        </article>
+
+        <!-- User Requested Feature: Reserved Beds for Seniors -->
+        <article class="card" style="padding:18px;border:2px solid var(--coral-500);background:var(--coral-50)">
+          <span class="kicker" style="background:#ffffff;color:#9f1239">Senior Reserved</span>
+          <p class="kpi" style="font-size:2.3rem;margin-top:6px;color:#e11d48">2 Beds</p>
+          <small style="color:#9f1239;font-weight:700">Strictly for Seniors &amp; SOS</small>
+        </article>
+      </div>
+
+      <!-- Priority Reservation Banner -->
+      <section class="info-note" style="border-left:5px solid var(--lavender-500);display:flex;align-items:center;gap:14px;margin-bottom:24px">
+        <span style="font-size:32px">🛡️</span>
+        <div>
+          <strong style="color:var(--lavender-900);font-size:15px">Hospital Policy: 4 Beds Permanently Reserved for High-Vulnerability Patients</strong>
+          <p style="font-size:13.5px;color:var(--ink-700);margin-top:2px">
+            Beds P-02, P-03, S-01, and E-04 cannot be assigned to regular adult elective admissions. They remain on 24/7 standby exclusively for children under 14, senior citizens (60+), and acute emergency arrivals.
+          </p>
+        </div>
+      </section>
+
+      <!-- Live Bed Roster List -->
+      <div class="cards">
+        <!-- Bed 1: Pediatric Reserved -->
+        <article class="card bed reserved" style="border-left-color:var(--lavender-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed P-02 (Pediatric Wing)</h3>
+            <span class="badge badge-wait">Reserved for Children</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Floor 2 · Pediatric Care Unit · Room 210</p>
+          <div style="background:var(--lavender-50);border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong style="color:var(--lavender-900)">Child Comfort Setup:</strong> Monitor, parental sleeper chair, warm incubator ready.
+          </div>
+          <a class="btn btn-primary" href="simple-queue.html?bed=P-02" style="text-decoration:none">Request Pediatric Bed →</a>
+        </article>
+
+        <!-- Bed 2: Pediatric Reserved -->
+        <article class="card bed reserved" style="border-left-color:var(--lavender-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed P-03 (Pediatric Wing)</h3>
+            <span class="badge badge-wait">Reserved for Children</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Floor 2 · Pediatric Care Unit · Room 212</p>
+          <div style="background:var(--lavender-50);border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong style="color:var(--lavender-900)">Child Comfort Setup:</strong> Oxygen support, pediatric nurse station adjacent.
+          </div>
+          <a class="btn btn-primary" href="simple-queue.html?bed=P-03" style="text-decoration:none">Request Pediatric Bed →</a>
+        </article>
+
+        <!-- Bed 3: Senior Citizen Reserved -->
+        <article class="card bed reserved" style="border-left-color:var(--coral-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed S-01 (Senior Care)</h3>
+            <span class="badge badge-em">Reserved for Seniors</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Floor 4 · Geriatric Ward · Room 405</p>
+          <div style="background:var(--coral-50);border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong style="color:#9f1239">Senior Ergonomic Bed:</strong> Low-height motorized, railing alarms, attendant call bell.
+          </div>
+          <a class="btn btn-coral" href="simple-queue.html?bed=S-01" style="text-decoration:none">Request Senior Bed →</a>
+        </article>
+
+        <!-- Bed 4: Senior Citizen Reserved -->
+        <article class="card bed reserved" style="border-left-color:var(--coral-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed S-02 (Senior Care)</h3>
+            <span class="badge badge-em">Reserved for Seniors</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Floor 4 · Geriatric Ward · Room 406</p>
+          <div style="background:var(--coral-50);border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong style="color:#9f1239">Senior Ergonomic Bed:</strong> Orthopedic air mattress, cardiac telemetry lead.
+          </div>
+          <a class="btn btn-coral" href="simple-queue.html?bed=S-02" style="text-decoration:none">Request Senior Bed →</a>
+        </article>
+
+        <!-- Bed 5: General Ward Bed -->
+        <article class="card bed">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed G-12 (General Ward)</h3>
+            <span class="badge badge-ok">Available for All</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Floor 3 · Ward A · Room 302</p>
+          <div style="background:var(--cream-soft);border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong>Standard Amenities:</strong> Multi-position bed, oxygen port, nurse call button.
+          </div>
+          <a class="btn btn-ghost" href="simple-queue.html?bed=G-12" style="text-decoration:none">Book Bed G-12 →</a>
+        </article>
+
+        <!-- Bed 6: Emergency Trauma Bed -->
+        <article class="card bed" style="border-left-color:#ea580c">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Bed E-04 (Emergency ICU)</h3>
+            <span class="badge badge-ot">Emergency Case Only</span>
+          </div>
+          <p class="muted" style="font-size:13.5px;margin-top:4px">Ground Floor · ED Rapid Care Wing</p>
+          <div style="background:#fff7ed;border-radius:var(--radius-md);padding:10px 14px;margin:12px 0;font-size:13px">
+            <strong style="color:#9a3412">Critical Care:</strong> Ventilator, defibrillator, multipara monitor.
+          </div>
+          <a class="btn btn-ghost" href="sos.html" style="text-decoration:none">Assign Emergency Bed →</a>
+        </article>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="book.html" style="color:var(--ink-700)">Book Appointment</a>
+            <a href="wheelchair.html" style="color:var(--ink-700)">Wheelchairs</a>
+            <a href="simple.html" style="color:var(--green-700);font-weight:700">Simple View</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Appointment &amp; Symptom Intake — WaitEase Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .symptom-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      background: var(--cream-soft);
+      border: 1px solid var(--cream-border);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-700);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .symptom-tag:hover {
+      background: var(--lavender-100);
+      border-color: var(--lavender-300);
+      color: var(--lavender-900);
+    }
+    .token-allocated-card {
+      background: #ffffff;
+      border: 2px solid var(--green-400);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(5, 150, 105, 0.08);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.4s ease-out;
+    }
+    .token-allocated-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--green-500) 0%, var(--lavender-500) 100%);
+    }
+    .token-allocated-card .huge-token {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(4.5rem, 10vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      color: var(--lavender-800);
+      margin: 14px 0 10px;
+      letter-spacing: -0.03em;
+    }
+    .pain-scale {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pain-btn {
+      flex: 1;
+      padding: 10px 4px;
+      text-align: center;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cream-border);
+      background: #ffffff;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .pain-btn.active, .pain-btn:hover {
+      background: var(--lavender-600);
+      color: #ffffff;
+      border-color: var(--lavender-600);
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link active" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Consultation Booking &amp; Triage</span>
+          <h1 style="margin-top:8px">Book OPD Appointment</h1>
+          <p class="slate">Provide your patient details and describe your illness to generate your verified queue token number.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Patient ID #WE-9042</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Booking Form & Token Generation Container -->
+      <div id="bookingFormSection" class="grid" style="grid-template-columns: 1.15fr 0.85fr; gap: 24px; align-items: start;">
+        
+        <!-- Left: Intake Form with Problem Selection & Textarea -->
+        <form class="card" id="appointmentIntakeForm" action="queue.html" method="GET" style="border:1px solid var(--cream-border);box-shadow:var(--shadow-sm)">
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--cream-border);padding-bottom:14px;margin-bottom:18px">
+            <div>
+              <span class="kicker">Step 1 of 2</span>
+              <h2 style="font-size:1.35rem;margin-top:4px">Patient &amp; Symptom Details</h2>
+            </div>
+            <span class="badge badge-wait">Instant Token Generation</span>
+          </div>
+
+          <!-- Section 1: Patient Demographic Verification -->
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:14px">
+            <label class="field">
+              <span>Patient Full Name *</span>
+              <input type="text" id="patientFullName" value="Rahul Sharma" placeholder="e.g. Rahul Sharma" required>
+            </label>
+            <label class="field">
+              <span>Age &amp; Gender *</span>
+              <input type="text" id="patientAgeGender" value="34 Yrs · Male" placeholder="e.g. 34 Yrs, Male" required>
+            </label>
+          </div>
+
+          <div class="grid" style="grid-template-columns:1fr 1fr; gap:14px; margin-top:10px">
+            <label class="field">
+              <span>Mobile Phone Number *</span>
+              <input type="tel" id="patientPhone" value="+91 98765 43210" placeholder="+91 98765 43210" required>
+            </label>
+            <label class="field">
+              <span>Residential Address *</span>
+              <input type="text" id="patientAddress" value="B-402 Shivalik Enclave, Satellite, Ahmedabad" placeholder="City, Area, Address" required>
+            </label>
+          </div>
+
+          <!-- Section 2: Selecting Doctor & Preferred Date -->
+          <div style="border-top:1px dashed var(--cream-border);padding-top:16px;margin-top:18px">
+            <span class="kicker kicker-green">Consulting Physician</span>
+            <div class="grid" style="grid-template-columns:1.2fr 0.8fr; gap:14px; margin-top:10px">
+              <label class="field">
+                <span>Select Doctor &amp; Department *</span>
+                <select id="selectedDoctorSelect">
+                  <option value="mehta">Dr. Anand Mehta · General Medicine (Room 204)</option>
+                  <option value="aditi">Dr. Aditi Shah · Cardiology (Room 310)</option>
+                  <option value="rohan">Dr. Rohan Patel · Orthopedics (Room 118)</option>
+                  <option value="neha">Dr. Neha Shah · Surgery (In OT until 4:15 PM)</option>
+                  <option value="sneha">Dr. Sneha Rao · Dermatology (Room 104)</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Preferred Date (Max 15 Days Ahead) *</span>
+                <input type="date" id="appointmentDateInput" value="2026-10-06" min="2026-10-06" max="2026-10-21" required>
+              </label>
+            </div>
+
+            <!-- 15-Day Booking Notice -->
+            <div class="note" style="margin-top:10px">
+              <strong style="color:var(--lavender-900)">ℹ️ 15-Day Booking Window:</strong>
+              <span style="font-size:12.5px;color:var(--ink-700);display:block;margin-top:2px">
+                Appointments are limited to 15 days ahead (up to Oct 21, 2026) to maintain queue accuracy and doctor availability.
+              </span>
+            </div>
+          </div>
+
+          <!-- Section 3: Primary Problem / Disease Category Selection -->
+          <div style="border-top:1px dashed var(--cream-border);padding-top:16px;margin-top:18px">
+            <span class="kicker">Medical Condition Category</span>
+            <label style="font-size:13px;font-weight:700;color:var(--ink-800);display:block;margin-top:6px">
+              Select existing problems / medical conditions (Click all that apply):
+            </label>
+            <div class="filter-bar" style="margin:8px 0 12px">
+              <input type="checkbox" id="cond1" checked><label for="cond1">Type 2 Diabetes</label>
+              <input type="checkbox" id="cond2"><label for="cond2">Hypertension / Blood Pressure</label>
+              <input type="checkbox" id="cond3" checked><label for="cond3">Seasonal Allergies &amp; Cold</label>
+              <input type="checkbox" id="cond4"><label for="cond4">Severe Joint &amp; Knee Pain</label>
+              <input type="checkbox" id="cond5"><label for="cond5">Fever &amp; Body Shivering</label>
+              <input type="checkbox" id="cond6"><label for="cond6">Chest Heaviness / Acidity</label>
+              <input type="checkbox" id="cond7"><label for="cond7">Digestive / Stomach Cramps</label>
+              <input type="checkbox" id="cond8"><label for="cond8">Skin Rashes / Itching</label>
+            </div>
+          </div>
+
+          <!-- Section 4: Detailed Problem Description (The Requested Textarea) -->
+          <div style="border-top:1px dashed var(--cream-border);padding-top:16px;margin-top:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span class="kicker kicker-green">Detailed Patient Statement</span>
+              <span class="muted" style="font-size:11.5px">Required for Doctor Review</span>
+            </div>
+            
+            <label class="field" style="margin-top:8px">
+              <span style="font-weight:750;font-size:14px;color:var(--ink-900)">
+                Describe what exactly you are suffering from:
+              </span>
+              <p class="muted" style="font-size:12.5px;margin-bottom:8px">
+                Please explain your specific symptoms, when the problem started, intensity of discomfort, any fever or breathing issues, and medicines you have taken so far.
+              </p>
+              <textarea id="patientProblemDescription" rows="5" placeholder="Example: Experiencing elevated morning fasting sugar (approx. 210 mg/dL) for the past 4 days accompanied by mild dizziness and fatigue. Also feeling seasonal wheezing and dry throat especially at night..." style="resize:vertical;font-size:13.5px;line-height:1.55" required>Experiencing elevated fasting blood sugar (205–215 mg/dL) over the past 4 days with mild dizziness and thirst. Also noticing seasonal chest congestion and night cough since 2 days.</textarea>
+            </label>
+
+            <!-- Quick Symptom Tags -->
+            <div style="margin-top:10px">
+              <span style="font-size:11.5px;font-weight:750;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:6px">
+                Common symptom indicators:
+              </span>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <span class="symptom-tag">+ Sugar Spike</span>
+                <span class="symptom-tag">+ Knee Pain</span>
+                <span class="symptom-tag">+ Night Cough</span>
+                <span class="symptom-tag">+ Fever &amp; Chills</span>
+                <span class="symptom-tag">+ Dizziness</span>
+                <span class="symptom-tag">+ Acidity/Nausea</span>
+              </div>
+            </div>
+
+            <!-- Pain / Discomfort Severity Level -->
+            <div style="margin-top:16px">
+              <span style="font-size:13px;font-weight:700;color:var(--ink-800);display:block">
+                Current Pain / Discomfort Level:
+              </span>
+              <div class="pain-scale">
+                <div class="pain-btn">1-3 Mild</div>
+                <div class="pain-btn active">4-6 Moderate</div>
+                <div class="pain-btn">7-8 Severe</div>
+                <div class="pain-btn">9-10 Acute</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div style="margin-top:24px;border-top:1px solid var(--cream-border);padding-top:18px">
+            <button class="btn btn-primary btn-block btn-lg" type="submit" style="font-size:1.05rem;box-shadow:var(--shadow-sm)">
+              Confirm Appointment &amp; Generate Live Queue Token →
+            </button>
+            <p class="center muted" style="font-size:12px;margin-top:10px">
+              🔒 Your information is transmitted securely to the OPD triage doctor. Token positions are strictly fair and timestamped.
+            </p>
+          </div>
+        </form>
+
+        <!-- Right: Doctor Live Status & Booking Preview Card -->
+        <aside style="display:flex;flex-direction:column;gap:18px">
+          <!-- Doctor Information Card -->
+          <article class="card" style="border:2px solid var(--lavender-200);background:#ffffff">
+            <span class="kicker kicker-green">Selected Doctor Roster</span>
+            
+            <div style="display:flex;align-items:center;gap:14px;margin-top:14px">
+              <div class="avatar" id="previewAvatar" style="background:var(--lavender-100);color:var(--lavender-800);font-size:22px">
+                AM
+              </div>
+              <div>
+                <h3 id="previewDocName" style="font-size:1.25rem">Dr. Anand Mehta</h3>
+                <p class="muted" id="previewDocSpec" style="font-size:13px">General Medicine &amp; Diabetes Care</p>
+                <strong id="previewDocRoom" style="color:var(--ink-800);font-size:12.5px;display:block;margin-top:2px">Room 204 · Floor 2</strong>
+              </div>
+            </div>
+
+            <!-- Doctor Specifications Grid -->
+            <div class="doctor-card-grid" style="margin-top:16px">
+              <div>
+                <span class="muted">Live Queue:</span>
+                <strong id="previewDocLine" style="color:var(--lavender-900);display:block">8 ahead</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong id="previewDocWait" style="color:var(--green-800);display:block">25–40 min</strong>
+              </div>
+              <div>
+                <span class="muted">Lunch Break:</span>
+                <span style="display:block;font-weight:600">1:30 – 2:15 PM</span>
+              </div>
+              <div>
+                <span class="muted">Consultation Fee:</span>
+                <span id="previewDocFee" style="display:block;font-weight:700;color:var(--ink-900)">₹500 (OPD)</span>
+              </div>
+            </div>
+
+            <div style="background:var(--green-50);border:1px solid var(--green-300);border-radius:var(--radius-md);padding:12px;font-size:13px;color:var(--green-900);margin-top:14px">
+              <strong>✓ Queue Protection Guarantee:</strong>
+              <p style="margin-top:4px;color:var(--ink-700)">
+                Once your token is generated, your place is fixed. If you need to step out to the cafeteria or pharmacy, you can activate a protected 20-minute hold.
+              </p>
+            </div>
+
+            <div style="margin-top:14px;display:flex;gap:10px">
+              <a class="btn btn-ghost" href="book.html" style="flex:1;text-align:center">Switch Doctor</a>
+              <a class="btn btn-ghost" href="doctors.html" style="flex:1;text-align:center">View OT Status</a>
+            </div>
+          </article>
+
+          <!-- 15-Day Booking Guarantee Strip -->
+          <article class="card">
+            <span class="kicker">Booking Transparency</span>
+            <h4 style="margin-top:8px">Honest Clinical Waiting Times</h4>
+            <p class="muted" style="font-size:13px;margin-top:4px;line-height:1.55">
+              WaitEase never displays deceiving 2-minute clocks. Waiting time estimates reflect actual patient consultations and emergency triage cases handled by the physician.
+            </p>
+          </article>
+        </aside>
+      </div>
+
+      <!-- SUCCESS / ALLOCATED TOKEN SECTION (Appears dynamically upon submission) -->
+      <section id="tokenAllocatedSection" style="display:none;margin-top:10px">
+        <div class="token-allocated-card" style="max-width:760px;margin:0 auto">
+          <span class="kicker kicker-green" style="font-size:13px;padding:6px 18px">Appointment Confirmed · Queue Token Generated</span>
+          
+          <h2 style="margin-top:14px;font-size:1.85rem;color:var(--ink-900)">
+            Your Hospital Consultation Token is Ready!
+          </h2>
+          <p class="slate" style="font-size:15px;margin-top:4px">
+            Your patient details and symptom description have been filed with the reception triage system.
+          </p>
+
+          <!-- The Massive Allocated Token Number -->
+          <div class="huge-token" id="allocatedTokenDisplay">
+            A-24
+          </div>
+
+          <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 20px;background:var(--lavender-100);border-radius:var(--radius-pill);margin-bottom:18px">
+            <span class="dot dot-pulse" style="background:var(--lavender-600)"></span>
+            <strong style="color:var(--lavender-900);font-size:15px" id="allocatedQueuePosition">
+              You are #8 in line (7 patients ahead)
+            </strong>
+          </div>
+
+          <!-- Key Details Grid -->
+          <div class="grid grid-3" style="text-align:left;gap:14px;margin:16px 0 24px">
+            <div style="background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-md);padding:14px">
+              <span class="muted" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em">Assigned Physician</span>
+              <strong style="display:block;margin-top:4px;font-size:14.5px;color:var(--ink-900)" id="allocatedDocName">Dr. Anand Mehta</strong>
+              <small class="muted" id="allocatedDocRoom">Room 204 · Floor 2</small>
+            </div>
+
+            <div style="background:var(--green-50);border:1px solid var(--green-300);border-radius:var(--radius-md);padding:14px">
+              <span class="muted" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em">Honest Wait Range</span>
+              <strong style="display:block;margin-top:4px;font-size:14.5px;color:var(--green-800)" id="allocatedWaitRange">25–40 minutes</strong>
+              <small style="color:var(--green-700)">Live Progress Active</small>
+            </div>
+
+            <div style="background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-md);padding:14px">
+              <span class="muted" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em">Consultation Date</span>
+              <strong style="display:block;margin-top:4px;font-size:14.5px;color:var(--ink-900)" id="allocatedDateDisplay">Today (Oct 06, 2026)</strong>
+              <small class="muted">Morning OPD Session</small>
+            </div>
+          </div>
+
+          <!-- Submitted Symptoms Summary Box -->
+          <div style="background:#faf8f5;border:1px dashed var(--cream-border);border-radius:var(--radius-md);padding:16px;text-align:left;margin-bottom:24px">
+            <span style="font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);display:block;margin-bottom:4px">
+              Filed Symptom Description:
+            </span>
+            <p id="allocatedSymptomSummary" style="font-size:13.5px;color:var(--ink-800);line-height:1.5;margin:0">
+              Description summary...
+            </p>
+          </div>
+
+          <!-- Notification Guarantee Note -->
+          <div class="info-note" style="display:flex;align-items:center;gap:12px;text-align:left;margin-bottom:24px">
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--lavender-200);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-800)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <span style="font-size:13px;color:var(--ink-800)">
+              <strong>Proximity Alert Guarantee:</strong> Your phone will receive the notification <em>"Tumhari baari aane wali hai"</em> when 2 patients remain ahead, and <em>"Tumhari baari aa gayi hai!"</em> upon calling.
+            </span>
+          </div>
+
+          <!-- Primary Navigation Actions -->
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-primary btn-lg" href="queue.html" style="padding:14px 28px;font-size:15px">
+              Track Live Queue Position &rarr;
+            </a>
+            <a class="btn btn-ghost btn-lg" href="my-visit.html">
+              View My Visit Dashboard
+            </a>
+          <!-- Primary Navigation Actions -->
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-primary btn-lg" href="queue.html" style="padding:14px 28px;font-size:15px">
+              Track Live Queue Position &rarr;
+            </a>
+            <a class="btn btn-ghost btn-lg" href="my-visit.html">
+              View My Visit Dashboard
+            </a>
+            <button class="btn btn-sand btn-lg">
+              🖨️ Print Token Pass
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="book.html" style="color:var(--ink-700)">Find Doctors</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>

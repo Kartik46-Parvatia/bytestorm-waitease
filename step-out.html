@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step Out Temporarily — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link active" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page" style="max-width:880px">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Screen 03 · Step Out &amp; Rejoin</span>
+          <h1 style="margin-top:8px">Step Out Temporarily</h1>
+          <p class="slate">Leave the waiting room for up to 20 minutes without losing your spot in line.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Token A-24 · Position #8</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Step Out Card -->
+      <section class="card" style="border:2px solid rgba(124,58,237,0.15)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
+          <div>
+            <span class="kicker">Protected Hold Status</span>
+            <h2 style="margin-top:8px">Temporary Leave Request</h2>
+            <p class="muted" style="margin-top:4px">
+              Your token will be placed in a <strong>Protected Hold state</strong> for 20 minutes.
+            </p>
+          </div>
+          <span class="badge badge-wait" style="font-size:13px;padding:6px 14px">Hold Window: 20 Minutes</span>
+        </div>
+
+        <!-- Metric Strip -->
+        <div class="stat-row" style="margin-top:22px">
+          <div class="stat" style="background:var(--lavender-50);border-color:rgba(124,58,237,0.2)">
+            <strong style="color:var(--lavender-800);font-size:1.8rem">A-24</strong>
+            <small style="color:var(--ink-700)">Your Assigned Token</small>
+          </div>
+          <div class="stat" style="background:var(--green-50);border-color:rgba(16,185,129,0.2)">
+            <strong style="color:var(--green-800);font-size:1.8rem">#8</strong>
+            <small style="color:var(--ink-700)">Current Position</small>
+          </div>
+          <div class="stat" style="background:var(--cream-sand);border-color:rgba(124,58,237,0.15)">
+            <strong style="color:var(--ink-900);font-size:1.8rem" id="returnByTime">10:45 AM</strong>
+            <small style="color:var(--ink-700)">Return-by Deadline</small>
+          </div>
+        </div>
+
+        <!-- Reason for Stepping Out -->
+        <div style="margin-top:24px">
+          <label class="field">
+            <span>Where are you heading? (Helps reception contact you if needed)</span>
+            <select id="stepOutReason">
+              <option value="pharmacy">Hospital Pharmacy (Ground Floor)</option>
+              <option value="cafeteria">Hospital Canteen / Cafeteria</option>
+              <option value="restroom">Restroom / Refreshment</option>
+              <option value="fresh_air">Outside Courtyard for Fresh Air</option>
+              <option value="billing">Billing / Cashier Desk</option>
+              <option value="other">Other reason</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Policy Explanation -->
+        <div class="grid grid-2" style="margin-top:16px;gap:16px">
+          <div class="info-note" style="border-left:4px solid var(--green-500);margin:0">
+            <strong style="color:var(--green-800);display:block">✓ If you return on time (within 20 min):</strong>
+            <span style="font-size:13px;color:var(--ink-700)">
+              Your position #8 remains fully reserved and protected. You will seamlessly resume your turn without any delay.
+            </span>
+          </div>
+
+          <div class="note" style="border-left:4px solid var(--coral-500);margin:0">
+            <strong style="color:#9f1239;display:flex;align-items:center;gap:6px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              What if you are late (exceeding 20 min)?
+            </strong>
+            <span style="font-size:13px;color:var(--ink-700);margin-top:2px;display:block">
+              If the 20-minute hold expires, your spot is automatically released to the next patient and you will rejoin at the end of the line.
+            </span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display:flex;gap:12px;margin-top:28px">
+          <a class="btn btn-primary btn-lg" href="return.html" style="flex:1">
+            Confirm Step Out &amp; Start 20-Min Timer →
+          </a>
+          <a class="btn btn-ghost btn-lg" href="queue.html">
+            Cancel &amp; Stay in Queue
+          </a>
+        </div>
+      </section>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

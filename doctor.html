@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Anand Mehta — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link active" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- Doctor Detail Card -->
+      <section class="card">
+        <div class="doctor-card-header">
+          <div class="avatar" style="width:72px;height:72px;font-size:24px">
+            AM
+          </div>
+          <div class="doctor-card-info">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+              <div>
+                <h1 style="font-size:1.75rem">Dr. Anand Mehta</h1>
+                <p class="muted" style="font-size:13.5px">MBBS, MD (Medicine) · Senior Consultant · 18 Years Experience</p>
+              </div>
+              <span class="badge badge-wait">In Consultation</span>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-top:6px;font-size:13px;color:var(--muted)">
+              <span>★ 4.9 (420 Patient Reviews)</span>
+              <span>·</span>
+              <strong style="color:var(--ink-800)">Room 204 · OPD Floor 2</strong>
+            </div>
+          </div>
+        </div>
+
+        <p class="slate" style="margin-top:14px;font-size:13.5px;line-height:1.55">
+          Specializes in <strong>Type 2 Diabetes Mellitus, Hypertension, Chronic Lifestyle Disorders, Seasonal Allergies, and Geriatric Care</strong>.
+        </p>
+
+        <!-- Queue Strip -->
+        <div class="doctor-card-grid" style="grid-template-columns:repeat(4, 1fr);margin-top:14px">
+          <div>
+            <span class="muted">Live Queue:</span>
+            <strong style="color:var(--lavender-900);display:block">18 waiting</strong>
+          </div>
+          <div>
+            <span class="muted">Estimated Wait:</span>
+            <strong style="color:var(--green-800);display:block">25–40 min range</strong>
+          </div>
+          <div>
+            <span class="muted">Lunch Break:</span>
+            <span style="display:block;font-weight:600">1:30 PM – 2:15 PM</span>
+          </div>
+          <div>
+            <span class="muted">Available Until:</span>
+            <span style="display:block;font-weight:600">5:30 PM Today</span>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <a class="btn btn-primary" href="book-appointment.html?doc=Dr.+Anand+Mehta">Book Dr. Mehta &amp; Generate Token →</a>
+          <a class="btn btn-ghost" href="book.html">Back to Doctor List</a>
+        </div>
+      </section>
+
+      <!-- Schedule & Reviews Grid -->
+      <div class="grid grid-2" style="margin-top:20px">
+        <section class="card">
+          <span class="kicker kicker-green">Detailed Timetable</span>
+          <h2 style="margin-top:8px;font-size:1.35rem">Today's Hourly Schedule</h2>
+          <ul style="margin-top:14px;display:grid;gap:8px;font-size:13px">
+            <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--cream-border)">
+              <span>09:00 AM – 11:30 AM</span>
+              <span class="badge badge-ok">Completed Morning Slots</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--cream-border)">
+              <span>11:30 AM – 01:30 PM</span>
+              <span class="badge badge-wait">Active OPD (Current)</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--cream-border)">
+              <span>01:30 PM – 02:15 PM</span>
+              <span class="badge badge-warn">Doctor Lunch Break</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--cream-border)">
+              <span>02:15 PM – 05:30 PM</span>
+              <span class="badge badge-ok">Afternoon OPD Slots</span>
+            </li>
+            <li style="display:flex;justify-content:space-between;padding:8px 0">
+              <span>05:30 PM Onwards</span>
+              <span class="badge badge-off">OPD Closed (Emergency On Call)</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <span class="kicker">Verified Patient Feedback</span>
+          <h2 style="margin-top:8px;font-size:1.35rem">Patient Reviews</h2>
+          <div style="margin-top:14px;display:grid;gap:10px">
+            <div style="background:var(--cream-soft);padding:12px 14px;border-radius:var(--radius-md)">
+              <p style="font-size:13px;font-style:italic">"Dr. Mehta explains chronic diabetes very calmly and never rushes. The WaitEase queue let me step out to the pharmacy without anxiety."</p>
+              <small class="muted" style="margin-top:4px;display:block">— Ramesh P. · Verified Visit (Oct 2)</small>
+            </div>
+            <div style="background:var(--cream-soft);padding:12px 14px;border-radius:var(--radius-md)">
+              <p style="font-size:13px;font-style:italic">"The wait time estimates are truthful ranges, not deceptive clocks. Highly recommend."</p>
+              <small class="muted" style="margin-top:4px;display:block">— Sunita K. · Verified Visit (Sep 28)</small>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="book.html" style="color:var(--ink-700)">Book Appointment</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="doctors.html" style="color:var(--ink-700)">Doctor Roster</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

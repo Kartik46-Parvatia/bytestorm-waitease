@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step Out Active — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link active" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page" style="max-width:860px">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Step Out Active</span>
+          <h1 style="margin-top:8px">Your Spot is Held</h1>
+          <p class="slate">Please return before the countdown expires to retain Token A-24 at Position #8.</p>
+        </div>
+        <span class="badge badge-warn"><span class="dot dot-pulse" style="background:#d97706"></span> Active Hold Timer</span>
+      </header>
+
+      <!-- Active Timer Card -->
+      <section class="card" id="holdCard" style="text-align:center;padding:36px;border:2px solid var(--lavender-400)">
+        <span class="kicker">Remaining Protected Hold Time</span>
+        
+        <!-- Big Interactive Countdown Timer -->
+        <div style="font-family:'Outfit', sans-serif;font-size:clamp(4rem, 8vw, 6.5rem);font-weight:800;color:var(--lavender-800);letter-spacing:-0.03em;margin:12px 0;line-height:1" id="countdownDisplay">
+          19:42
+        </div>
+
+        <p style="font-size:16px;font-weight:700;color:var(--ink-800)">
+          Token A-24 · Position #8 is temporarily reserved
+        </p>
+        <p class="muted" style="margin-top:4px;font-size:14px">
+          Return-by deadline: <strong>10:45 AM</strong> (Pharmacy / Canteen)
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="bar" style="max-width:460px;margin:20px auto;height:12px">
+          <span style="width:85%" id="timerProgress"></span>
+        </div>
+
+        <!-- Rejoin Action Button -->
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap">
+          <a class="btn btn-green btn-lg" href="queue.html" style="text-decoration:none">
+            ✓ I Have Returned — Rejoin Queue at Position #8 →
+          </a>
+          <a class="btn btn-ghost btn-lg" href="queue.html" style="text-decoration:none">
+            ⚠️ Late Return (&gt;20 min) — Rejoin at End of Queue
+          </a>
+        </div>
+      </section>
+
+      <!-- Hospital Fairness Policy Cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:16px;margin-top:24px">
+        <div class="card page" style="border:2px solid var(--green-400);background:var(--green-50);margin:0">
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:var(--green-100);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div>
+              <h3 style="color:var(--green-900);font-size:16px">Case 1: Return Within 20-Min Window</h3>
+              <p style="color:var(--ink-800);margin-top:4px;font-size:13px">
+                Your spot is 100% preserved. You seamlessly rejoin the active line for Dr. Mehta at <strong>Position #8</strong> (Token A-24).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card page" style="border:2px solid var(--coral-400);background:var(--coral-50);margin:0">
+          <div style="display:flex;align-items:flex-start;gap:14px">
+            <div style="width:40px;height:40px;border-radius:10px;background:#ffe4e6;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral-500)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <div>
+              <h3 style="color:var(--coral-700);font-size:16px">Case 2: If Hold Time Expires (&gt;20 min)</h3>
+              <p style="color:var(--ink-800);margin-top:4px;font-size:13px">
+                If the 20-minute temporary leave is exceeded, hospital fairness rules automatically refresh and place your token at the end of the line.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

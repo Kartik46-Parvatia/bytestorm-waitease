@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Flow Analytics — WaitEase Hospital Staff</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="staff-shell">
+  <div class="shell">
+    <!-- Staff Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small style="color:var(--green-300)">Staff &amp; Reception Control</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Floor Operations</div>
+      <a class="nav-link" href="staff.html"><span class="nav-icon">📊</span> Reception Desk</a>
+      <a class="nav-link active" href="staff-analytics.html"><span class="nav-icon">📈</span> Flow Analytics</a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Roster</a>
+
+      <div class="nav-category">Switch Portal</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🧑</span> View Patient Portal</a>
+      <a class="nav-link" href="login.html" style="margin-top:auto"><span class="nav-icon">🚪</span> Sign Out Staff</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Screen 07 · Patient Flow Analytics</span>
+          <h1 style="margin-top:8px">Where Is Waiting Time Lost?</h1>
+          <p class="slate">Operational insights tracking average wait times, causes of queue delay, step-outs retention, and peak vs. quiet hours.</p>
+        </div>
+        <div class="who">
+          <span class="badge badge-ok">Reporting Period: Today (Oct 5)</span>
+        </div>
+      </header>
+
+      <!-- Key Analytics KPIs (Explicit Screen 7 requirements) -->
+      <div class="grid grid-4" style="margin-bottom:28px">
+        <article class="card">
+          <span class="kicker kicker-green">Average Patient Wait</span>
+          <p class="kpi" style="color:var(--lavender-800);margin-top:8px">32 min</p>
+          <small class="muted">Goal: &lt;35 min (Met today)</small>
+        </article>
+
+        <article class="card">
+          <span class="kicker">Avg Consultation Time</span>
+          <p class="kpi" style="color:var(--green-700);margin-top:8px">14.2 min</p>
+          <small class="muted">Across 6 OPD specialists</small>
+        </article>
+
+        <article class="card">
+          <span class="kicker" style="background:#fff1f2;color:#9f1239">No-Shows Rate</span>
+          <p class="kpi" style="color:#e11d48;margin-top:8px">7.8%</p>
+          <small class="muted">Down from 18% (15-day rule)</small>
+        </article>
+
+        <article class="card" style="border:2px solid var(--green-500);background:var(--green-50)">
+          <span class="kicker" style="background:#ffffff">Step-Out Retention</span>
+          <p class="kpi" style="color:var(--green-900);margin-top:8px">91.4%</p>
+          <small style="color:var(--green-800);font-weight:700">Returned within 20 min hold</small>
+        </article>
+      </div>
+
+      <!-- Average Wait by Hour & Doctor (Explicit PDF Screen 7 requirement) -->
+      <div class="grid grid-2">
+        <!-- Wait by Hour -->
+        <article class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <span class="kicker">Hourly Bottleneck Tracker</span>
+              <h3 style="margin-top:6px">Average Wait by Hour of the Day</h3>
+            </div>
+            <span class="badge badge-warn">Peak: 11 AM – 1 PM</span>
+          </div>
+
+          <div style="margin-top:20px;display:grid;gap:14px;font-size:13.5px">
+            <div>
+              <div style="display:flex;justify-content:space-between">
+                <span>09:00 AM – 10:00 AM (Early Intake)</span>
+                <strong>18 min wait</strong>
+              </div>
+              <div class="bar"><span style="width:35%"></span></div>
+            </div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between">
+                <span style="font-weight:750;color:#9f1239">11:00 AM – 01:00 PM (Peak Surge)</span>
+                <strong style="color:#9f1239">48 min wait</strong>
+              </div>
+              <div class="bar"><span style="width:92%;background:linear-gradient(90deg, #f43f5e, #be123c)"></span></div>
+            </div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between">
+                <span>02:15 PM – 03:30 PM (Post-Break Session)</span>
+                <strong>26 min wait</strong>
+              </div>
+              <div class="bar"><span style="width:52%"></span></div>
+            </div>
+
+            <div>
+              <div style="display:flex;justify-content:space-between">
+                <span>04:00 PM – 05:30 PM (Quiet Evening)</span>
+                <strong>12 min wait</strong>
+              </div>
+              <div class="bar"><span style="width:24%"></span></div>
+            </div>
+          </div>
+
+          <p class="muted" style="margin-top:16px;font-size:12.5px">
+            💡 Recommendation: Schedule non-urgent diabetes follow-ups after 3:30 PM to balance peak arrivals.
+          </p>
+        </article>
+
+        <!-- Main Causes of Delay (Explicit PDF Screen 7 requirement) -->
+        <article class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <span class="kicker">Root Cause Analysis</span>
+              <h3 style="margin-top:6px">Primary Causes of Queue Delay</h3>
+            </div>
+            <span class="badge badge-ok">Today's Data</span>
+          </div>
+
+          <!-- Pie / Donut Chart -->
+          <div class="pie" style="margin-top:20px"></div>
+
+          <div style="margin-top:22px;display:grid;gap:8px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--green-50);border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--green-500)"></span>
+                <strong>Emergency Triage Cases (46%)</strong>
+              </div>
+              <span class="muted">Prioritized acute arrivals</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fff1f2;border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--coral-500)"></span>
+                <strong>Extended Consultations (32%)</strong>
+              </div>
+              <span class="muted">Complex multi-morbidity</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lavender-50);border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--lavender-500)"></span>
+                <strong>Doctor OT / Surgical Calls (22%)</strong>
+              </div>
+              <span class="muted">Scheduled surgical rounds</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Wait Times by Doctor (Explicit PDF Screen 7 requirement) -->
+      <section class="card" style="margin-top:28px">
+        <h3>Doctor Performance &amp; Average Wait</h3>
+        <table class="table" style="margin-top:14px">
+          <thead>
+            <tr>
+              <th>Doctor Name</th>
+              <th>Department</th>
+              <th>Total Patients Seen</th>
+              <th>Avg Wait Time</th>
+              <th>Step-Outs Handled</th>
+              <th>Queue Efficiency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dr. Anand Mehta</strong></td>
+              <td>General Medicine (Room 204)</td>
+              <td>28 consultations</td>
+              <td><strong>28 min</strong></td>
+              <td>12 stepped out (11 returned on time)</td>
+              <td><span class="badge badge-ok">94% High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dr. Aditi Shah</strong></td>
+              <td>Cardiology (Room 310)</td>
+              <td>18 consultations</td>
+              <td><strong>22 min</strong></td>
+              <td>5 stepped out (all returned)</td>
+              <td><span class="badge badge-ok">98% Optimal</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dr. Rohan Patel</strong></td>
+              <td>Orthopedics (Room 118)</td>
+              <td>15 consultations</td>
+              <td><strong>34 min</strong></td>
+              <td>4 stepped out</td>
+              <td><span class="badge badge-wait">88% Normal</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dr. Neha Desai</strong></td>
+              <td>Pediatrics (Room 106)</td>
+              <td>22 children</td>
+              <td><strong>26 min</strong></td>
+              <td>8 stepped out (parents in canteen)</td>
+              <td><span class="badge badge-ok">92% High</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="choose.html" style="color:var(--ink-700)">Switch Experience</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

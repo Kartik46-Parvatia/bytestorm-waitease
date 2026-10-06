@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctor Status &amp; Roster — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link active" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Live Clinical Floor Roster</span>
+          <h1 style="margin-top:8px">Doctor Status &amp; Availability</h1>
+          <p class="slate">Complete transparency on who is in clinic, who is scrubbed into the Operation Theater (OT), on break, or on scheduled leave.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Doctor: Dr. Anand Mehta</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Status Summary Cards -->
+      <div class="grid grid-4" style="margin-bottom:24px">
+        <div class="card" style="padding:18px">
+          <span class="kicker kicker-green">Available / In Clinic</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:var(--green-700)">14</p>
+          <small class="muted">Active consultations</small>
+        </div>
+        <div class="card" style="padding:18px">
+          <span class="kicker" style="background:#ffedd5;color:#9a3412">In Surgery (OT)</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:#c2410c">3</p>
+          <small class="muted">Present in hospital</small>
+        </div>
+        <div class="card" style="padding:18px">
+          <span class="kicker" style="background:#fef3c7;color:#92400e">On Break</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:#b45309">4</p>
+          <small class="muted">Returning shortly</small>
+        </div>
+        <div class="card" style="padding:18px">
+          <span class="kicker" style="background:#f1f5f9;color:#475569">On Approved Leave</span>
+          <p class="kpi" style="font-size:2.2rem;margin-top:6px;color:#475569">2</p>
+          <small class="muted">Date ranges tracked</small>
+        </div>
+      </div>
+
+      <!-- Doctor Status Cards -->
+      <div class="cards">
+        <!-- Card 1: Dr. Neha Shah (In Operation Theater) -->
+        <article class="card" style="border-left:5px solid #ea580c">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Neha Shah</h3>
+            <span class="badge badge-ot">In Operation Theater (OT)</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">Senior General &amp; Laparoscopic Surgeon · 20 yrs exp</p>
+
+          <div style="background:#fff7ed;border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:#9a3412">🏥 Present in Hospital · Currently Scrubbed In</strong>
+            <p style="color:var(--ink-700);margin-top:4px">
+              Performing scheduled laparoscopic cholecystectomy in <strong>OT Complex 3</strong>.
+            </p>
+            <div style="margin-top:8px;display:flex;gap:12px;font-size:13px;font-weight:700">
+              <span style="color:#c2410c">Started: 1:30 PM</span>
+              <span style="color:#15803d">Expected Return to OPD: ~4:15 PM</span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <a class="btn btn-ghost" href="book.html">Pre-book Evening Slot</a>
+            <span class="muted" style="font-size:12px">Covering: Dr. K. Joshi</span>
+          </div>
+        </article>
+
+        <!-- Card 2: Dr. Raj Patel (On Leave) -->
+        <article class="card" style="border-left:5px solid #94a3b8">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Raj Patel</h3>
+            <span class="badge badge-off">On Scheduled Leave</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">ENT &amp; Head-Neck Surgery · Room 218</p>
+
+          <div style="background:#f8fafc;border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:#334155">📅 Leave Period: 10 Oct 2026 – 15 Oct 2026</strong>
+            <p style="color:var(--muted);margin-top:4px">
+              Attending National ENT Conference in New Delhi. Resuming daily OPD on Monday, 16 October at 9:00 AM.
+            </p>
+            <p style="margin-top:6px;font-weight:600;color:var(--ink-700)">
+              Emergency ENT cover provided by: <strong>Dr. V. Menon (Room 220)</strong>
+            </p>
+          </div>
+
+          <a class="btn btn-ghost" href="book.html">Book for 16th October</a>
+        </article>
+
+        <!-- Card 3: Dr. Anand Mehta (In Consultation) -->
+        <article class="card" style="border-left:5px solid var(--lavender-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Anand Mehta</h3>
+            <span class="badge badge-wait">In Consultation</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">General Medicine · Room 204 (Floor 2)</p>
+
+          <div style="background:var(--lavender-50);border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:var(--lavender-900)">Live OPD Consultation Active</strong>
+            <p style="color:var(--ink-700);margin-top:4px">
+              Currently treating Token A-23. Active queue length: 18 patients.
+            </p>
+            <div style="margin-top:8px;font-size:13px;display:flex;gap:12px;color:var(--ink-800);font-weight:600">
+              <span>Break: 1:30 PM – 2:15 PM</span>
+              <span>Available Until: 5:30 PM</span>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="queue.html">Go to Dr. Mehta's Queue →</a>
+        </article>
+
+        <!-- Card 4: Dr. Aditi Shah (Available) -->
+        <article class="card" style="border-left:5px solid var(--green-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Aditi Shah</h3>
+            <span class="badge badge-ok"><span class="dot dot-pulse"></span> Available Now</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">Cardiology &amp; Vascular Care · Room 310 (Floor 3)</p>
+
+          <div style="background:var(--green-50);border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:var(--green-900)">Short Queue · Quick Consultation</strong>
+            <p style="color:var(--ink-700);margin-top:4px">
+              Only 7 patients in line. Estimated wait: 15–25 minutes. Available until 6:00 PM today.
+            </p>
+          </div>
+
+          <a class="btn btn-green" href="book-appointment.html?doc=Dr.+Aditi+Shah">Book Dr. Aditi Shah</a>
+        </article>
+
+        <!-- Card 5: Dr. Rohan Patel (On Break) -->
+        <article class="card" style="border-left:5px solid #d97706">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Rohan Patel</h3>
+            <span class="badge badge-warn">On Afternoon Break</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">Orthopedics · Room 118 (Floor 1)</p>
+
+          <div style="background:#fffbeb;border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:#92400e">☕ Break Window: 1:15 PM – 2:00 PM</strong>
+            <p style="color:var(--ink-700);margin-top:4px">
+              Resuming consultations promptly at 2:00 PM. Patients in line retain token positions.
+            </p>
+          </div>
+
+          <a class="btn btn-ghost" href="book-appointment.html?doc=Dr.+Rohan+Patel">Book Post-Break Slot</a>
+        </article>
+
+        <!-- Card 6: Dr. Neha Desai (Emergency Duty) -->
+        <article class="card" style="border-left:5px solid var(--coral-500)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <h3 style="font-size:1.25rem">Dr. Neha Desai</h3>
+            <span class="badge badge-em">Emergency / ED Duty</span>
+          </div>
+          <p class="muted" style="margin-top:2px;font-size:13.5px">Pediatrics &amp; Child Critical Care · ED Wing</p>
+
+          <div style="background:var(--coral-50);border-radius:var(--radius-md);padding:14px;margin:14px 0;font-size:13.5px">
+            <strong style="color:#9f1239">🚨 Assigned to Rapid Emergency Response</strong>
+            <p style="color:var(--ink-700);margin-top:4px">
+              Handling urgent triage cases and pediatric acute trauma. OPD appointments paused for today.
+            </p>
+          </div>
+
+          <a class="btn btn-coral" href="sos.html">Emergency Child Triage</a>
+        </article>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="book-appointment.html" style="color:var(--ink-700)">Book Appointment</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

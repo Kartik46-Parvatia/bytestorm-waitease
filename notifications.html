@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications &amp; Alerts — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link active" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Screen 04 · Real-Time Patient Alerts</span>
+          <h1 style="margin-top:8px">Notifications &amp; Delay Updates</h1>
+          <p class="slate">Stay informed wherever you are in the hospital. Receive honest range adjustments, turn alerts, and doctor status changes.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Token A-24</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Alert Filters -->
+      <div class="filter-bar">
+        <input type="radio" name="nf" id="nf1" checked><label for="nf1">All Alerts (5)</label>
+        <input type="radio" name="nf" id="nf2"><label for="nf2">Turn &amp; Calling (2)</label>
+        <input type="radio" name="nf" id="nf3"><label for="nf3">Delays &amp; Queue (2)</label>
+        <input type="radio" name="nf" id="nf4"><label for="nf4">Doctor Status (1)</label>
+      </div>
+
+      <!-- Notification List -->
+      <div style="max-width:960px">
+        <!-- Notif 1: Turn Calling -->
+        <article class="notif unread card" style="border-left:5px solid var(--green-500)">
+          <div class="n-ico" style="background:var(--green-100);color:var(--green-800)">🚨</div>
+          <div class="notif-body">
+            <strong style="font-size:15px;color:var(--green-900);display:block">"Tumhari Baari Aa Gayi Hai!" — Your Turn Has Arrived</strong>
+            <p style="font-size:14px;color:var(--ink-800);margin-top:4px">
+              Token <strong>A-24</strong> is now being called into <strong>Room 204</strong> by Dr. Anand Mehta. Please proceed inside.
+            </p>
+            <p class="muted" style="font-size:12px;margin-top:6px">Turn Calling Alert · Sent via SMS &amp; In-App Notification</p>
+          </div>
+          <div class="notif-actions">
+            <span class="badge badge-ok">Just Now</span>
+            <a class="btn btn-green" href="queue.html" style="padding:6px 14px;font-size:13px">Open Queue</a>
+          </div>
+        </article>
+
+        <!-- Notif 2: Turn Near -->
+        <article class="notif unread card" style="border-left:5px solid var(--lavender-500)">
+          <div class="n-ico" style="background:var(--lavender-100);color:var(--lavender-800)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
+          <div class="notif-body">
+            <strong style="font-size:15px;color:var(--lavender-900);display:block">"Tumhari Baari Aane Wali Hai" — Your Turn is Near</strong>
+            <p style="font-size:14px;color:var(--ink-800);margin-top:4px">
+              Only 2 patients remain ahead of Token <strong>A-24</strong>. Please conclude any cafeteria or pharmacy errands and wait near Room 204.
+            </p>
+            <p class="muted" style="font-size:12px;margin-top:6px">Proximity Alert · Triggered when queue length &le; 2</p>
+          </div>
+          <div class="notif-actions">
+            <span class="badge badge-wait">5 mins ago</span>
+            <a class="btn btn-ghost" href="step-out.html" style="padding:6px 14px;font-size:13px">Rejoin Area</a>
+          </div>
+        </article>
+
+        <!-- Notif 3: Delay Reason Broadcast -->
+        <article class="notif card" style="border-left:5px solid #d97706">
+          <div class="n-ico" style="background:#fef3c7;color:#92400e">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div class="notif-body">
+            <strong style="font-size:15px;color:#92400e;display:block">Queue Delay Notice: 15–20 min adjustment</strong>
+            <p style="font-size:14px;color:var(--ink-800);margin-top:4px">
+              Dr. Mehta prioritized 2 emergency acute cases. <strong>Your position #8 remains fully reserved and protected</strong>. We appreciate your patience.
+            </p>
+            <p class="muted" style="font-size:12px;margin-top:6px">Reception Delay Broadcast · General Medicine OPD</p>
+          </div>
+          <div class="notif-actions">
+            <span class="badge badge-warn">18 mins ago</span>
+          </div>
+        </article>
+
+        <!-- Notif 4: Step Out Reminder -->
+        <article class="notif card" style="border-left:5px solid var(--lavender-400)">
+          <div class="n-ico" style="background:var(--cream-sand);color:var(--ink-800)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="notif-body">
+            <strong style="font-size:15px;display:block">Step Out Reminder: 8 Minutes Remaining on Hold</strong>
+            <p style="font-size:14px;color:var(--ink-800);margin-top:4px">
+              You requested temporary leave for the hospital pharmacy. Please return by 10:45 AM to keep Token A-24 in position #8.
+            </p>
+            <p class="muted" style="font-size:12px;margin-top:6px">Hold Timer Alert · Automatic Protected Expiry Monitor</p>
+          </div>
+          <div class="notif-actions">
+            <span class="badge" style="background:var(--cream-soft);border:1px solid var(--cream-border);color:var(--muted)">28 mins ago</span>
+          </div>
+        </article>
+
+        <!-- Notif 5: Appointment Confirmed -->
+        <article class="notif card">
+          <div class="n-ico" style="background:var(--green-50);color:var(--green-700)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="notif-body">
+            <strong style="font-size:15px;display:block">Check-In Successful · Token A-24 Assigned</strong>
+            <p style="font-size:14px;color:var(--ink-800);margin-top:4px">
+              Dr. Anand Mehta · General Medicine · Room 204. Initial vitals recorded: BP 122/80, Pulse 74.
+            </p>
+            <p class="muted" style="font-size:12px;margin-top:6px">Visit Intake Desk · Reception Counter 2</p>
+          </div>
+          <div class="notif-actions">
+            <span class="badge" style="background:var(--cream-soft);border:1px solid var(--cream-border);color:var(--muted)">09:40 AM</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="choose.html" style="color:var(--ink-700)">Switch Mode</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

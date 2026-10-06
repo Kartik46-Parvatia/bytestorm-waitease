@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Analysis &amp; Recovery Trends — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link active" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">Comprehensive Disease Analytics</span>
+          <h1 style="margin-top:8px">Health Recovery &amp; Disease Analysis</h1>
+          <p class="slate">Detailed breakdown showing which health conditions are recovering well and which areas require immediate clinical attention.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Active Record #WE-2026-8841</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Recovery vs Attention Summary Cards -->
+      <section class="grid grid-3">
+        <!-- Card 1: Recovering Well -->
+        <article class="card" style="border-top:5px solid var(--green-500)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <span class="kicker kicker-green">Recovering Well</span>
+            <span class="badge badge-ok">78% Progress</span>
+          </div>
+          <p class="kpi" style="color:var(--green-700);margin-top:8px">Allergy &amp; Lung</p>
+          <div class="bar" style="height:10px;margin-top:10px">
+            <span style="width:78%;background:linear-gradient(90deg, var(--green-600), var(--green-400))"></span>
+          </div>
+          <p style="font-size:13.5px;color:var(--ink-700);margin-top:10px;line-height:1.5">
+            <strong>Significant Recovery:</strong> Seasonal wheezing down by 65%. Clear respiratory auscultation. Maintain antihistamines as needed.
+          </p>
+        </article>
+
+        <!-- Card 2: Needs Attention / Care Required -->
+        <article class="card" style="border-top:5px solid var(--coral-500)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <span class="kicker" style="background:#fff1f2;color:#9f1239;border-color:rgba(225,29,72,0.2)">Needs Attention</span>
+            <span class="badge badge-em">Care Required</span>
+          </div>
+          <p class="kpi" style="color:#e11d48;margin-top:8px">Blood Sugar</p>
+          <div class="bar" style="height:10px;margin-top:10px">
+            <span style="width:48%;background:linear-gradient(90deg, #f43f5e, #be123c)"></span>
+          </div>
+          <p style="font-size:13.5px;color:var(--ink-700);margin-top:10px;line-height:1.5">
+            <strong>Attention Needed:</strong> Fasting blood glucose spiked to <strong>148 mg/dL</strong> (Target: &lt;110). Dr. Mehta will evaluate Metformin dosage today.
+          </p>
+        </article>
+
+        <!-- Card 3: Controlled & Stable -->
+        <article class="card" style="border-top:5px solid var(--lavender-500)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <span class="kicker">Controlled &amp; Stable</span>
+            <span class="badge badge-wait">92% Controlled</span>
+          </div>
+          <p class="kpi" style="color:var(--lavender-800);margin-top:8px">Blood Pressure</p>
+          <div class="bar" style="height:10px;margin-top:10px">
+            <span style="width:92%;background:linear-gradient(90deg, var(--lavender-600), var(--lavender-400))"></span>
+          </div>
+          <p style="font-size:13.5px;color:var(--ink-700);margin-top:10px;line-height:1.5">
+            <strong>Optimal Vitals:</strong> Blood pressure 122/80 mmHg, resting pulse 74 bpm. Cardiovascular markers are stable.
+          </p>
+        </article>
+      </section>
+
+      <!-- Charts & Visual Graphs Section -->
+      <section class="grid grid-2" style="margin-top:28px">
+        <!-- Visual Graph: 6-Month Glucose & Vitals Trajectory -->
+        <article class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <span class="kicker">Health Metric Graph</span>
+              <h3 style="margin-top:6px">6-Month Blood Sugar (Fasting) &amp; HbA1c Trend</h3>
+            </div>
+            <span class="badge badge-ok">Monthly Track</span>
+          </div>
+
+          <!-- SVG Visual Line & Area Graph -->
+          <div style="margin-top:20px;background:var(--cream-soft);border-radius:var(--radius-md);padding:18px;border:1px solid rgba(124,58,237,0.08)">
+            <svg viewBox="0 0 500 180" style="width:100%;height:auto;overflow:visible">
+              <!-- Grid lines -->
+              <line x1="40" y1="20" x2="480" y2="20" stroke="#e2e8f0" stroke-dasharray="3 3"/>
+              <line x1="40" y1="60" x2="480" y2="60" stroke="#e2e8f0" stroke-dasharray="3 3"/>
+              <line x1="40" y1="100" x2="480" y2="100" stroke="#e2e8f0" stroke-dasharray="3 3"/>
+              <line x1="40" y1="140" x2="480" y2="140" stroke="#cbd5e1"/>
+
+              <!-- Axis labels -->
+              <text x="30" y="25" font-size="10" fill="#64748b" text-anchor="end">160</text>
+              <text x="30" y="65" font-size="10" fill="#64748b" text-anchor="end">140</text>
+              <text x="30" y="105" font-size="10" fill="#64748b" text-anchor="end">120</text>
+              <text x="30" y="145" font-size="10" fill="#64748b" text-anchor="end">100</text>
+
+              <!-- Month labels -->
+              <text x="70" y="160" font-size="11" fill="#64748b" text-anchor="middle">May</text>
+              <text x="150" y="160" font-size="11" fill="#64748b" text-anchor="middle">Jun</text>
+              <text x="230" y="160" font-size="11" fill="#64748b" text-anchor="middle">Jul</text>
+              <text x="310" y="160" font-size="11" fill="#64748b" text-anchor="middle">Aug</text>
+              <text x="390" y="160" font-size="11" fill="#64748b" text-anchor="middle">Sep</text>
+              <text x="460" y="160" font-size="11" fill="#7c3aed" font-weight="700" text-anchor="middle">Oct (Now)</text>
+
+              <!-- Safe target zone -->
+              <rect x="40" y="80" width="440" height="60" fill="rgba(16,185,129,0.08)"/>
+
+              <!-- Gradient fill under line -->
+              <defs>
+                <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="70,40 150,55 230,75 310,95 390,70 460,45 460,140 70,140" fill="url(#chartGrad)"/>
+
+              <!-- Data line -->
+              <polyline points="70,40 150,55 230,75 310,95 390,70 460,45" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round"/>
+
+              <!-- Data dots -->
+              <circle cx="70" cy="40" r="4" fill="#7c3aed"/>
+              <circle cx="150" cy="55" r="4" fill="#7c3aed"/>
+              <circle cx="230" cy="75" r="4" fill="#7c3aed"/>
+              <circle cx="310" cy="95" r="4" fill="#10b981"/>
+              <circle cx="390" cy="70" r="4" fill="#7c3aed"/>
+              <circle cx="460" cy="45" r="6" fill="#e11d48" stroke="#ffffff" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:13px">
+            <span style="color:var(--green-700)">🟩 Green Band = Safe Target Range (&lt;120 mg/dL)</span>
+            <span style="color:var(--coral-500);font-weight:700">🔴 Oct Spike: 148 mg/dL (Discussion with Dr. Mehta today)</span>
+          </div>
+        </article>
+
+        <!-- Visual Pie / Donut Chart: Condition Breakdown -->
+        <article class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <span class="kicker">Condition Distribution</span>
+              <h3 style="margin-top:6px">Overall Health Condition Ratio</h3>
+            </div>
+            <span class="badge badge-wait">3 Parameters</span>
+          </div>
+
+          <!-- Pie / Donut Chart -->
+          <div class="pie" style="margin-top:24px"></div>
+
+          <div style="margin-top:24px;display:grid;gap:10px;font-size:13.5px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--green-50);border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--green-500)"></span>
+                <strong>Recovering &amp; Improving (62%)</strong>
+              </div>
+              <span class="muted">Seasonal Allergy &amp; Respiration</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--lavender-50);border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--lavender-500)"></span>
+                <strong>Stable &amp; Monitored (22%)</strong>
+              </div>
+              <span class="muted">Blood Pressure &amp; Heart Rate</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fff1f2;border-radius:var(--radius-md)">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span class="dot" style="background:var(--coral-500)"></span>
+                <strong>Needs Attention (16%)</strong>
+              </div>
+              <span style="color:#9f1239;font-weight:700">Fasting Glucose Spikes</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Flowchart Section: Care Pathway & Treatment Milestones -->
+      <section class="card" style="margin-top:28px">
+        <span class="kicker kicker-green">Clinical Flowchart</span>
+        <h2 style="margin-top:8px">Treatment Pathway &amp; Recovery Milestones</h2>
+        <p class="muted" style="margin-top:4px">
+          The step-by-step clinical roadmap recommended by hospital specialists for chronic condition stabilization.
+        </p>
+
+        <!-- Interactive Flowchart Steps -->
+        <div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:14px;margin-top:22px;position:relative">
+          <!-- Step 1 -->
+          <div style="background:var(--green-50);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-md);padding:16px;text-align:center">
+            <span class="badge badge-ok" style="font-size:11px">Stage 1 · Done</span>
+            <h4 style="margin-top:8px;font-size:14px;color:var(--green-900)">Diagnosis &amp; Vitals</h4>
+            <p class="muted" style="font-size:12px;margin-top:4px">Oct 2025 · Type 2 Diabetes confirmed</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div style="background:var(--green-50);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-md);padding:16px;text-align:center">
+            <span class="badge badge-ok" style="font-size:11px">Stage 2 · Done</span>
+            <h4 style="margin-top:8px;font-size:14px;color:var(--green-900)">Medication Intake</h4>
+            <p class="muted" style="font-size:12px;margin-top:4px">Metformin 500mg daily started</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div style="background:var(--green-50);border:1px solid rgba(16,185,129,0.3);border-radius:var(--radius-md);padding:16px;text-align:center">
+            <span class="badge badge-ok" style="font-size:11px">Stage 3 · Done</span>
+            <h4 style="margin-top:8px;font-size:14px;color:var(--green-900)">Quarterly Review</h4>
+            <p class="muted" style="font-size:12px;margin-top:4px">HbA1c lowered to 7.4%</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div style="background:var(--lavender-100);border:2px solid var(--lavender-500);border-radius:var(--radius-md);padding:16px;text-align:center;box-shadow:var(--shadow-sm)">
+            <span class="badge badge-wait" style="font-size:11px">Stage 4 · Today</span>
+            <h4 style="margin-top:8px;font-size:14px;color:var(--lavender-900)">Dosage Adjustment</h4>
+            <p style="font-size:12px;margin-top:4px;color:var(--lavender-800);font-weight:700">Consultation with Dr. Mehta (Room 204)</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div style="background:var(--cream-soft);border:1px dashed rgba(124,58,237,0.3);border-radius:var(--radius-md);padding:16px;text-align:center">
+            <span class="badge badge-off" style="font-size:11px">Stage 5 · Goal</span>
+            <h4 style="margin-top:8px;font-size:14px;color:var(--ink-700)">Complete Remission</h4>
+            <p class="muted" style="font-size:12px;margin-top:4px">Target HbA1c &lt;6.5% by Jan 2027</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly Vitals Checklist -->
+      <section class="card" style="margin-top:28px">
+        <h3>Weekly Vitals Overview</h3>
+        <div class="grid grid-4" style="margin-top:14px;gap:16px">
+          <div>
+            <span class="muted" style="font-size:13px">Blood Pressure</span>
+            <div class="bar"><span style="width:75%"></span></div>
+            <strong style="font-size:14px;margin-top:6px;display:block">122/80 mmHg (Normal)</strong>
+          </div>
+          <div>
+            <span class="muted" style="font-size:13px">Resting Pulse</span>
+            <div class="bar"><span style="width:62%"></span></div>
+            <strong style="font-size:14px;margin-top:6px;display:block">74 bpm (Optimal)</strong>
+          </div>
+          <div>
+            <span class="muted" style="font-size:13px">Sleep Duration</span>
+            <div class="bar"><span style="width:80%"></span></div>
+            <strong style="font-size:14px;margin-top:6px;display:block">7.5 hrs / night (Good)</strong>
+          </div>
+          <div>
+            <span class="muted" style="font-size:13px">Daily Steps</span>
+            <div class="bar"><span style="width:68%"></span></div>
+            <strong style="font-size:14px;margin-top:6px;display:block">6,840 steps / day</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="book.html" style="color:var(--ink-700)">Book Appointment</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="profile.html" style="color:var(--ink-700)">My Profile</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

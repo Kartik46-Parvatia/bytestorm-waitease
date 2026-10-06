@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <section class="hero-auth page">
+    <!-- Left Hero Column -->
+    <div class="hero-copy">
+      <a class="brand" href="index.html" style="color:var(--ink-900);margin:0">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small style="color:var(--lavender-600);font-weight:700">Care Multispeciality Hospital</small>
+        </div>
+      </a>
+
+      <div style="margin-top:64px">
+        <span class="kicker kicker-green">Welcome Back</span>
+        <h1 style="margin-top:16px">Enter a hospital experience built on honesty.</h1>
+        <p class="slate" style="margin-top:16px;max-width:480px;font-size:1.1rem;line-height:1.6">
+          Whether you are a patient awaiting consultation or hospital staff coordinating the floor, WaitEase keeps everyone synchronized with real-time updates and honest ranges.
+        </p>
+
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+          <div class="card" style="padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-xs)">
+            <span style="font-size:24px">🧑‍⚕️</span>
+            <div>
+              <strong style="font-size:13.5px">For Patients</strong>
+              <p class="muted" style="font-size:12px">Track line, step out, get notified</p>
+            </div>
+          </div>
+          <div class="card" style="padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-xs)">
+            <span style="font-size:24px">📋</span>
+            <div>
+              <strong style="font-size:13.5px">For Staff</strong>
+              <p class="muted" style="font-size:12px">Manage live queues &amp; broadcast delays</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Login Card -->
+    <div style="display:flex;align-items:center;justify-content:center">
+      <form class="auth-panel" action="choose.html" id="loginForm">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="kicker">Authentication</span>
+          <span class="badge badge-ok"><span class="dot dot-pulse"></span> System Live</span>
+        </div>
+        <h2 style="margin-top:10px">Sign In to WaitEase</h2>
+        <p class="muted" style="font-size:14px;margin-top:4px">Select whether you are logging in as a Patient or Hospital Staff.</p>
+
+        <!-- Role Tabs -->
+        <div class="tabs" style="margin-top:20px">
+          <a class="on" href="choose.html" id="tabPatient">Patient Portal</a>
+          <a href="staff.html" id="tabStaff">Hospital Staff</a>
+        </div>
+
+        <!-- Form Fields -->
+        <div id="patientFields">
+          <label class="field">
+            <span>Mobile Number or Email Address</span>
+            <input type="text" id="patientContact" value="+91 98765 43210" placeholder="+91 98765 43210 or name@email.com" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" value="••••••••" placeholder="Enter your password" required>
+          </label>
+        </div>
+
+        <div id="staffFields" style="display:none">
+          <label class="field">
+            <span>Staff ID / Hospital Employee Email</span>
+            <input type="text" placeholder="STAFF-4091 or dr.mehta@waitease.org">
+          </label>
+          <label class="field">
+            <span>Security PIN / Password</span>
+            <input type="password" placeholder="Staff authentication key">
+          </label>
+          <label class="field">
+            <span>Assigned Department</span>
+            <select>
+              <option>Reception Desk &amp; Triage</option>
+              <option>General Medicine (Dr. Mehta)</option>
+              <option>Cardiology (Dr. Aditi Shah)</option>
+              <option>Emergency Department (ED)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row" style="margin-top:12px">
+          <label style="cursor:pointer;display:flex;align-items:center;gap:6px">
+            <input type="checkbox" checked> Remember me
+          </label>
+          <a href="#" style="color:var(--lavender-600);font-weight:700">Forgot password?</a>
+        </div>
+
+        <button class="btn btn-primary btn-block btn-lg" style="margin-top:24px" type="submit" id="submitBtn">
+          Continue to Patient Experience →
+        </button>
+
+        <p class="center muted" style="margin-top:20px;font-size:14px">
+          New patient? <a href="signup.html" style="color:var(--lavender-600);font-weight:800">Create an account / Register here</a>
+        </p>
+        <p class="center muted" style="margin-top:8px;font-size:12px;display:flex;align-items:center;justify-content:center;gap:6px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Encrypted patient records · HIPAA &amp; NDHM compliant standards
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Complete Site Footer with Team Contact Emails -->
+  <footer class="site-foot" style="background:#ffffff;border-top:1px solid var(--cream-border);padding:24px 48px;margin-top:auto">
+    <div style="max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+        <div>
+          <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+          <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+        </div>
+        <div style="display:flex;gap:16px;font-size:13px">
+          <a href="index.html" style="color:var(--ink-700)">Home</a>
+          <a href="signup.html" style="color:var(--ink-700)">Patient Registration</a>
+          <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Portal</a>
+        </div>
+      </div>
+
+      <div style="border-top:1px dashed var(--cream-border);padding-top:12px">
+        <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+          Team &amp; Hospital Contact Inquiries:
+        </span>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            parvatiakartik@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            shrija090@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            aditya0kumar0sharma@gmail.com
+          </a>
+          <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            rudra.dholakiya28@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

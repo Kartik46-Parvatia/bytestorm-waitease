@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Appointment — WaitEase Care Hospital</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <img class="logo-mark" src="assets/logo-icon.png" alt="WaitEase Logo">
+        <div>
+          <strong>WaitEase</strong>
+          <small>Adult Patient Care</small>
+        </div>
+      </a>
+
+      <div class="nav-category">Main Menu</div>
+      <a class="nav-link" href="my-visit.html"><span class="nav-icon">🏠</span> Home / My Visit</a>
+      <a class="nav-link" href="book-appointment.html"><span class="nav-icon">📅</span> Book Appointment</a>
+      <a class="nav-link active" href="book.html"><span class="nav-icon">🔍</span> Find Doctors</a>
+      <a class="nav-link" href="queue.html"><span class="nav-icon">⏳</span> Live Queue <span class="badge-nav">#8</span></a>
+      <a class="nav-link" href="doctors.html"><span class="nav-icon">🩺</span> Doctor Status</a>
+      <a class="nav-link" href="help.html"><span class="nav-icon">💬</span> Reception / Helpdesk</a>
+      <a class="nav-link" href="notifications.html"><span class="nav-icon">🔔</span> Notifications <span class="badge-nav">2</span></a>
+
+      <div class="nav-category">Health &amp; Profile</div>
+      <a class="nav-link" href="profile.html"><span class="nav-icon">👤</span> My Profile</a>
+      <a class="nav-link" href="health.html"><span class="nav-icon">📊</span> Health Analysis</a>
+
+      <div class="nav-category">Hospital Services</div>
+      <a class="nav-link" href="wheelchair.html"><span class="nav-icon">♿</span> Wheelchair Assistance</a>
+      <a class="nav-link" href="beds.html"><span class="nav-icon">🛏️</span> Bed Availability</a>
+
+      <a class="nav-link nav-sos" href="sos.html"><span class="nav-icon">🚨</span> SOS / Emergency</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main page">
+      <!-- App Header -->
+      <header class="app-head">
+        <div>
+          <span class="kicker kicker-green">OPD Specialist Scheduling</span>
+          <h1 style="margin-top:6px">Find &amp; Book the Right Doctor</h1>
+          <p class="slate" style="font-size:14px;margin-top:2px">Select a specialist by your symptoms or disease. Review waiting queue lengths, break times, and 15-day forward limits.</p>
+        </div>
+        <div class="who">
+          <div class="avatar sm">RS</div>
+          <div>
+            <strong>Rahul Sharma</strong>
+            <span>Active Token: A-24</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Direct Patient Symptom Intake Banner -->
+      <section class="card" style="background:linear-gradient(135deg, var(--lavender-50) 0%, #ffffff 100%);border:2px solid var(--lavender-300);margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding:18px 24px">
+        <div>
+          <span class="kicker kicker-green">New Patient Intake &amp; Triage</span>
+          <h3 style="font-size:1.2rem;margin-top:4px">Describe your symptoms to generate your queue token</h3>
+          <p class="slate" style="font-size:13.5px;margin-top:2px">Fill in your personal details, select your health conditions, and describe what you are suffering from.</p>
+        </div>
+        <a class="btn btn-primary" href="book-appointment.html" style="padding:10px 20px;font-size:13.5px">
+          Fill Patient Intake Form &rarr;
+        </a>
+      </section>
+
+      <!-- Search Input -->
+      <div style="position:relative;margin-bottom:14px">
+        <input class="search" style="max-width:100%;font-size:14px;padding-left:42px" id="searchInput" placeholder="Search by doctor name (e.g. Dr. Mehta), disease (e.g. diabetes, chest pain, fever), or specialty...">
+        <span style="position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted)">🔍</span>
+      </div>
+
+      <!-- Disease & Condition Filters -->
+      <div style="margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">
+            Filter by Disease / Condition:
+          </span>
+          <small class="muted" style="font-weight:600">All Specialists Active</small>
+        </div>
+        <div class="filter-bar" id="diseaseFilterBar" style="margin:0">
+          <input type="radio" name="dFilter" id="df-all" checked><label for="df-all">All Doctors (6)</label>
+          <input type="radio" name="dFilter" id="df-diabetes"><label for="df-diabetes">Type 2 Diabetes &amp; Sugar</label>
+          <input type="radio" name="dFilter" id="df-heart"><label for="df-heart">Heart &amp; BP (Cardiology)</label>
+          <input type="radio" name="dFilter" id="df-bone"><label for="df-bone">Bone &amp; Joint Pain (Orthopedics)</label>
+          <input type="radio" name="dFilter" id="df-skin"><label for="df-skin">Skin &amp; Allergies (Dermatology)</label>
+          <input type="radio" name="dFilter" id="df-fever"><label for="df-fever">Fever, Flu &amp; General</label>
+          <input type="radio" name="dFilter" id="df-child"><label for="df-child">Pediatrics &amp; Child Health</label>
+          <input type="radio" name="dFilter" id="df-neuro"><label for="df-neuro">Neurology</label>
+        </div>
+      </div>
+
+      <!-- Doctor Cards Grid with Proper Alignment -->
+      <div class="cards" id="doctorCardsList">
+        <!-- Doctor 1: Dr. Mehta -->
+        <article class="card doctor-card" data-disease="diabetes fever general" data-name="dr. anand mehta general medicine">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar">AM</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Anand Mehta</h3>
+                    <p class="muted" style="font-size:13px">General Medicine &amp; Chronic Diabetes</p>
+                  </div>
+                  <span class="badge badge-wait">In Consultation</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.9 (420)</span>
+                  <span>·</span>
+                  <span>18 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">Room 204</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid">
+              <div>
+                <span class="muted">Line Length:</span>
+                <strong style="color:var(--lavender-900);display:block">18 in line</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong style="color:var(--green-800);display:block">25–40 min range</strong>
+              </div>
+              <div>
+                <span class="muted">Doctor Break:</span>
+                <span style="display:block;font-weight:600">1:30 PM – 2:15 PM</span>
+              </div>
+              <div>
+                <span class="muted">Available Until:</span>
+                <span style="display:block;font-weight:600">5:30 PM Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-primary" style="flex:1" href="book-appointment.html?doc=Dr.+Anand+Mehta">
+              Book Appointment
+            </a>
+            <a class="btn btn-ghost" href="doctor.html">View Schedule</a>
+          </div>
+        </article>
+
+        <!-- Doctor 2: Dr. Aditi Shah -->
+        <article class="card doctor-card" data-disease="heart bp" data-name="dr. aditi shah cardiology">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar" style="background:var(--green-100);color:var(--green-900)">AS</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Aditi Shah</h3>
+                    <p class="muted" style="font-size:13px">Cardiology &amp; Vascular Care</p>
+                  </div>
+                  <span class="badge badge-ok"><span class="dot dot-pulse"></span> Available Now</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.9 (310)</span>
+                  <span>·</span>
+                  <span>14 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">Room 310</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid">
+              <div>
+                <span class="muted">Line Length:</span>
+                <strong style="color:var(--lavender-900);display:block">7 in line</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong style="color:var(--green-800);display:block">15–25 min range</strong>
+              </div>
+              <div>
+                <span class="muted">Doctor Break:</span>
+                <span style="display:block;font-weight:600">2:00 PM – 2:30 PM</span>
+              </div>
+              <div>
+                <span class="muted">Available Until:</span>
+                <span style="display:block;font-weight:600">6:00 PM Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-primary" style="flex:1" href="book-appointment.html?doc=Dr.+Aditi+Shah">
+              Book Appointment
+            </a>
+            <a class="btn btn-ghost" href="doctor.html">View Schedule</a>
+          </div>
+        </article>
+
+        <!-- Doctor 3: Dr. Rohan Patel -->
+        <article class="card doctor-card" data-disease="bone joint pain" data-name="dr. rohan patel orthopedics">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar" style="background:var(--amber-50);color:#8c4e00">RP</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Rohan Patel</h3>
+                    <p class="muted" style="font-size:13px">Orthopedics &amp; Joint Replacement</p>
+                  </div>
+                  <span class="badge badge-warn">On Break</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.7 (280)</span>
+                  <span>·</span>
+                  <span>11 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">Room 118</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid">
+              <div>
+                <span class="muted">Line Length:</span>
+                <strong style="color:var(--lavender-900);display:block">10 in line</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong style="color:var(--green-800);display:block">30–45 min range</strong>
+              </div>
+              <div>
+                <span class="muted">Doctor Break:</span>
+                <span style="display:block;font-weight:600">1:15 PM – 2:00 PM</span>
+              </div>
+              <div>
+                <span class="muted">Available Until:</span>
+                <span style="display:block;font-weight:600">7:00 PM Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-primary" style="flex:1" href="book-appointment.html?doc=Dr.+Rohan+Patel">
+              Book Appointment
+            </a>
+            <a class="btn btn-ghost" href="doctor.html">View Schedule</a>
+          </div>
+        </article>
+
+        <!-- Doctor 4: Dr. Neha Shah (In OT) -->
+        <article class="card doctor-card" data-disease="surgery bone" data-name="dr. neha shah surgery ot">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar" style="background:#fff7ed;color:#9a3412">NS</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Neha Shah</h3>
+                    <p class="muted" style="font-size:13px">Senior Laparoscopic Surgeon</p>
+                  </div>
+                  <span class="badge badge-ot">In Surgery (OT)</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.9 (510)</span>
+                  <span>·</span>
+                  <span>20 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">OT Complex 3</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid" style="background:#fffaf5;border-color:#fed7aa">
+              <div>
+                <span class="muted">Campus Status:</span>
+                <strong style="color:#9a3412;display:block">Present in Hospital</strong>
+              </div>
+              <div>
+                <span class="muted">Current Surgery:</span>
+                <strong style="color:#9a3412;display:block">OT Complex 3</strong>
+              </div>
+              <div>
+                <span class="muted">Expected Return:</span>
+                <span style="display:block;font-weight:600;color:var(--green-800)">~4:15 PM</span>
+              </div>
+              <div>
+                <span class="muted">Evening Slots:</span>
+                <span style="display:block;font-weight:600">Open for Pre-booking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-ghost" style="flex:1" href="book-appointment.html?doc=Dr.+Neha+Shah">
+              Pre-Book for Evening
+            </a>
+            <a class="btn btn-ghost" href="doctors.html">Track OT Status</a>
+          </div>
+        </article>
+
+        <!-- Doctor 5: Dr. Pooja Verma -->
+        <article class="card doctor-card" data-disease="skin allergies" data-name="dr. pooja verma dermatology">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar" style="background:var(--lavender-100)">PV</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Pooja Verma</h3>
+                    <p class="muted" style="font-size:13px">Dermatology &amp; Allergies</p>
+                  </div>
+                  <span class="badge badge-ok"><span class="dot dot-pulse"></span> Available Now</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.8 (190)</span>
+                  <span>·</span>
+                  <span>9 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">Room 214</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid">
+              <div>
+                <span class="muted">Line Length:</span>
+                <strong style="color:var(--lavender-900);display:block">4 in line</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong style="color:var(--green-800);display:block">10–20 min range</strong>
+              </div>
+              <div>
+                <span class="muted">Doctor Break:</span>
+                <span style="display:block;font-weight:600">2:30 PM – 3:00 PM</span>
+              </div>
+              <div>
+                <span class="muted">Available Until:</span>
+                <span style="display:block;font-weight:600">6:30 PM Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-primary" style="flex:1" href="book-appointment.html?doc=Dr.+Pooja+Verma">
+              Book Appointment
+            </a>
+            <a class="btn btn-ghost" href="doctor.html">View Schedule</a>
+          </div>
+        </article>
+
+        <!-- Doctor 6: Dr. Neha Desai -->
+        <article class="card doctor-card" data-disease="child pediatrics" data-name="dr. neha desai pediatrics">
+          <div>
+            <div class="doctor-card-header">
+              <div class="avatar" style="background:var(--green-100);color:var(--green-900)">ND</div>
+              <div class="doctor-card-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                  <div>
+                    <h3>Dr. Neha Desai</h3>
+                    <p class="muted" style="font-size:13px">Senior Pediatrician (Child Health)</p>
+                  </div>
+                  <span class="badge badge-wait">In Consultation</span>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:4px;font-size:12.5px;color:var(--muted)">
+                  <span>★ 4.9 (480)</span>
+                  <span>·</span>
+                  <span>16 yrs exp</span>
+                  <span>·</span>
+                  <strong style="color:var(--ink-800)">Room 106</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Aligned 2x2 Grid -->
+            <div class="doctor-card-grid">
+              <div>
+                <span class="muted">Line Length:</span>
+                <strong style="color:var(--lavender-900);display:block">9 children in line</strong>
+              </div>
+              <div>
+                <span class="muted">Estimated Wait:</span>
+                <strong style="color:var(--green-800);display:block">20–35 min range</strong>
+              </div>
+              <div>
+                <span class="muted">Doctor Break:</span>
+                <span style="display:block;font-weight:600">1:00 PM – 1:45 PM</span>
+              </div>
+              <div>
+                <span class="muted">Available Until:</span>
+                <span style="display:block;font-weight:600">5:00 PM Today</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aligned Buttons Row -->
+          <div class="doctor-card-actions">
+            <a class="btn btn-primary" style="flex:1" href="book-appointment.html?doc=Dr.+Neha+Desai">
+              Book Appointment
+            </a>
+            <a class="btn btn-ghost" href="doctor.html">View Schedule</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Advance Booking Section with 15-Day Restriction -->
+      <section class="card" style="margin-top:28px" id="calendarSection">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+          <div>
+            <span class="kicker">Forward Booking Rules</span>
+            <h2 style="margin-top:6px;font-size:1.45rem">Select Appointment Date (Within 15 Days)</h2>
+            <p class="muted" style="margin-top:2px;font-size:13.5px">
+              To keep doctor schedules dependable and reduce no-shows, appointments are limited to 15 days in advance.
+            </p>
+          </div>
+          <span class="badge badge-ok">15-Day Window Active</span>
+        </div>
+
+        <!-- Symmetrical 15-Day Calendar Grid -->
+        <div class="calendar" style="margin-top:16px">
+          <!-- Allowed Days: 1 to 15 -->
+          <div class="day on">5<small style="font-size:10px;font-weight:500">TODAY</small></div>
+          <div class="day">6<small style="font-size:10px;font-weight:500">TUE</small></div>
+          <div class="day">7<small style="font-size:10px;font-weight:500">WED</small></div>
+          <div class="day">8<small style="font-size:10px;font-weight:500">THU</small></div>
+          <div class="day">9<small style="font-size:10px;font-weight:500">FRI</small></div>
+          <div class="day">10<small style="font-size:10px;font-weight:500">SAT</small></div>
+          <div class="day">11<small style="font-size:10px;font-weight:500">SUN</small></div>
+          <div class="day">12<small style="font-size:10px;font-weight:500">MON</small></div>
+          <div class="day">13<small style="font-size:10px;font-weight:500">TUE</small></div>
+          <div class="day">14<small style="font-size:10px;font-weight:500">WED</small></div>
+          <div class="day">15<small style="font-size:10px;font-weight:500">THU</small></div>
+          <div class="day">16<small style="font-size:10px;font-weight:500">FRI</small></div>
+          <div class="day">17<small style="font-size:10px;font-weight:500">SAT</small></div>
+          <div class="day">18<small style="font-size:10px;font-weight:500">SUN</small></div>
+          <div class="day">19<small style="font-size:10px;font-weight:500">MON</small></div>
+
+          <!-- Restricted Days (>15 days ahead) -->
+          <div class="day off" title="Locked: Beyond 15-day limit">20<small style="font-size:10px">LOCKED</small></div>
+          <div class="day off" title="Locked: Beyond 15-day limit">21<small style="font-size:10px">LOCKED</small></div>
+          <div class="day off" title="Locked: Beyond 15-day limit">22<small style="font-size:10px">LOCKED</small></div>
+          <div class="day off" title="Locked: Beyond 15-day limit">23<small style="font-size:10px">LOCKED</small></div>
+          <div class="day off" title="Locked: Beyond 15-day limit">24<small style="font-size:10px">LOCKED</small></div>
+          <div class="day off" title="Locked: Beyond 15-day limit">25<small style="font-size:10px">LOCKED</small></div>
+        </div>
+
+        <!-- 15-Day Policy Banner -->
+        <div class="note" style="margin-top:14px">
+          <strong>⚠️ 15-Day Forward Booking Policy:</strong>
+          <span style="font-size:13px;display:block;margin-top:2px">
+            Appointments cannot be booked more than 15 days ahead to maintain schedule accuracy and prevent unfulfilled slots. Days beyond October 19 are automatically locked.
+          </span>
+        </div>
+      </section>
+
+      <!-- Complete Site Footer with Team Contact Emails -->
+      <footer class="site-foot" style="background:#ffffff;border:1px solid var(--cream-border);border-radius:var(--radius-xl);padding:24px 28px;margin-top:36px;box-shadow:var(--shadow-xs)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+          <div>
+            <strong style="color:var(--ink-900);font-size:14.5px">WaitEase Care Multispeciality Hospital</strong>
+            <p class="muted" style="font-size:12px;margin-top:2px">PixelRush 2026 Hackathon · Case Study 05 "CalmWait"</p>
+          </div>
+          <div style="display:flex;gap:16px;font-size:13px">
+            <a href="index.html" style="color:var(--ink-700)">Home</a>
+            <a href="queue.html" style="color:var(--ink-700)">Live Queue</a>
+            <a href="help.html" style="color:var(--ink-700)">Helpdesk</a>
+            <a href="choose.html" style="color:var(--ink-700)">Switch Mode</a>
+            <a href="staff.html" style="color:var(--lavender-700);font-weight:700">Staff Desk</a>
+          </div>
+        </div>
+
+        <div style="border-top:1px dashed var(--cream-border);padding-top:14px;margin-top:14px">
+          <span style="font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);display:block;margin-bottom:8px">
+            Team &amp; Hospital Contact Inquiries:
+          </span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a class="email-pill" href="mailto:parvatiakartik@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              parvatiakartik@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:shrija090@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              shrija090@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:aditya0kumar0sharma@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              aditya0kumar0sharma@gmail.com
+            </a>
+            <a class="email-pill" href="mailto:rudra.dholakiya28@gmail.com" style="display:inline-flex;align-items:center;gap:6px;background:var(--cream-soft);border:1px solid var(--cream-border);border-radius:var(--radius-pill);padding:6px 12px;font-size:12px;color:var(--ink-800);text-decoration:none">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--lavender-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              rudra.dholakiya28@gmail.com
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
